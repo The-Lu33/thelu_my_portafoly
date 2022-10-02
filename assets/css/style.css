@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+:root {
+  --red: #db0414;
+  --rosa-light: #c60842;
+  --rosa-dark: #ac0e65;
+  --morado-light: #7c1773;
+  --morado-dark: #331f36;
+  --white-text: #f5f5f5;
+  --white-p: #f5f5f5eb;
+
+  --fond: #161616;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--fond);
+  font-family: "Permanent Marker", cursive;
+}
+/* ---Nabvar--- */
+.nabvar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 16px; */
+  padding: 10px 1rem;
+}
+.tittle_navbar {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--white-text);
+  text-shadow: 6px 6px 12px rgba(102, 102, 102, 0.2),
+    -6px -6px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* ---Header--- */
+.image_container {
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-rows: 128px 72px auto;
+  grid-template-columns: 100px 100px auto;
+  max-width: 360px;
+  height: 330px;
+  margin-bottom: 45px;
+}
+.image_logo_the_lu,
+.iam {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.image_logo_the_lu {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  box-shadow: inset 20px 20px 50px #090909, inset -20px -20px 50px #232323;
+}
+.iam {
+  grid-column-start: 1;
+  grid-row: 2;
+  box-shadow: 20px 20px 40px #090909; /* , 5px 5px 20px #262626; */
+  /*   box-shadow:  20px -20px 40px #090909,
+             -1px 1px 50px #232323; */
+}
+.presentation_container {
+  text-align: center;
+  color: var(--white-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tittle_secundary {
+  font-size: 25px;
+  font-weight: 400;
+}
+.tittle_firts {
+  font-size: 50px;
+  font-weight: 400;
+  text-shadow: -15px -15px 30px rgba(102, 102, 102, 0.2),
+    15px 15px 30px rgba(255, 255, 255, 0.1);
+}
+.line_firts {
+  /* border: 5px solid ; */
+  width: 200px;
+  border: none;
+  height: 5px;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  background: radial-gradient(
+    100% 3841599.97% at 0% -500.09%,
+    #7c1773 6.77%,
+    #c60842 52.08%,
+    #db0414 100%
+  );
+}
+.paragraph_firt {
+  font-weight: 400;
+  font-size: 22px;
+  padding: 0 60px;
+  margin-bottom: 65px;
+}
+.buttons {
+  width: 360px;
+  /* padding: 0 50px; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3.75rem;
+}
+.button_social {
+  width: 50px;
+  height: 50px;
+  background: #161616;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #090909, -5px -5px 10px #232323;
+  /* box-shadow:  -5px 5px 8px var(--morado-dark),
+             5px -5px 8px var(--red); */
+}
+/* main */
+.tittles {
+  font-size: 25px;
+  color: var(--white-text);
+  font-weight: 400;
+}
+.line {
+  border: none;
+  height: 5px;
+  border-radius: 5px;
+
+  background: radial-gradient(
+    100% 3841599.97% at 0% -500.09%,
+    #7c1773 6.77%,
+    #c60842 52.08%,
+    #db0414 100%
+  );
+}
+/* --about me-- */
+.section_about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 340px;
+  margin: 0 auto;
+  margin-bottom: 3.75rem;
+}
+
+.section_about > .line {
+  width: 150px;
+  margin-bottom: 30px;
+}
+.paragraph_about {
+  color: var(--white-p);
+  font-weight: 400;
+  font-size: 1rem;
+}
+/* -- skills -- */
+.section_skrills {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+  background: #161616;
+  box-shadow: 30px 30px 60px #090909, -30px -30px 60px #232323;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0;
+  margin-bottom: 3.75rem;
+}
+.section_skrills > .line {
+  width: 80px;
+}
+.container_skills {
+  width: 200px;
+}
+.skills {
+  margin-top: 2rem;
+  color: var(--white-text);
+  font-size: 1rem;
+}
+.bars_container {
+}
+.bars_skrills {
+  border: none;
+  height: 5px;
+  border-radius: 5px;
+
+  background: radial-gradient(
+    100% 3841599.97% at 0% -500.09%,
+    #7c1773 6.77%,
+    #c60842 52.08%,
+    #db0414 100%
+  );
+}
+/* ---techonologies- */
+
+.techonologies_container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+}
+.techonologies_container > div > .line {
+  margin-bottom: 2.5rem;
+}
+.technologies_skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.box_skill {
+  height: 70px;
+  width: 70px;
+  margin: 1.25rem;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: 7px 7px 14px #090909, -7px -7px 14px #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box_skill > img {
+  width: 50px;
+  height: 50px;
+}
+/* briefcard */
+
+.briefcase_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+}
+.briefcase_container > .line {
+  width: 125px;
+  margin-bottom: 2.5rem;
+}
+/* contact */
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact_container > .line {
+  width: 100px;
+  margin-bottom: 2.5rem;
+}
+.contact_image_container {
+  width: 150px;
+  height: 150px;
+  background: #161616;
+  box-shadow: -15px -15px 30px #232323, 15px 15px 30px #090909;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+}
+.contact_image_container > img {
+  width: 100px;
+  height: 80px;
+}
+footer{
+  text-align: center;
+}
+footer > h2{
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white-p);
+}
