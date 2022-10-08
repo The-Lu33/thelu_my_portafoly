@@ -12,18 +12,26 @@
       <nav class="nabvar">
         <h2 class="tittle_navbar">The Lú</h2>
         <div class="container_menu_nabvar">
-          <span class="line1_menu"></span><span class="line2_menu"></span
-          ><span class="line3_menu"></span>
+          <span class="line1_menu"></span>
+          <span class="line2_menu"></span>
+          <span class="line3_menu"></span>
+        </div>
+
+        <div class="menu_responsive menu_navbar">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">SKills</a></li>
+            <li><a href="#">Techonologies</a></li>
+            <li><a href="#">Briefcase</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
       </nav>
-      <div class="menu_responsive"></div>
       <section class="principal_header">
         <div class="image_container">
-          <img
-            src="./assets/img/lu1080x1080.jpg"
-            alt=""
-            class="image_logo_the_lu" />
-          <img src="./assets/img/iam.svg" alt="" class="iam" />
+          <img src="./assets/img/0.jpg" class="image_logo_the_lu" />
+          <img src="./assets/img/iam.svg" class="iam" />
         </div>
         <article class="presentation_container">
           <h3 class="tittle_secundary">I AM</h3>
@@ -31,20 +39,22 @@
           <hr class="line_firts" />
           <p class="paragraph_firt">Full Stack Developer Designer ux/ui</p>
         </article>
-        <div class="buttons">
+        <div class="buttons_sociales">
           <button class="button_social button_twitter">
             <a href="https://twitter.com/The_Lu33" target="_blank">
-              <img src="./assets/img/twitter.png" alt="" />
+              <img src="./assets/img/twitter.svg" />
             </a>
           </button>
           <button class="button_social button_linkedin">
-            <a href="#" target="_blank"
-              ><img src="./assets/img/linkedin.png" alt=""
+            <a
+              href="https://www.linkedin.com/in/luisangel-tapia/"
+              target="_blank"
+              ><img src="./assets/img/linkedin.svg"
             /></a>
           </button>
-          <button class="button_social button_instagram">
-            <a href="#">
-              <img src="./assets/img/instagram.png" alt="" />
+          <button class="button_social button_github">
+            <a href="https://github.com/The-Lu33">
+              <img src="./assets/img/github.svg" />
             </a>
           </button>
         </div>
@@ -66,15 +76,15 @@
         <div class="container_skills">
           <h2 class="skills">full Stack Developer</h2>
           <div class="bars_container">
-            <hr class="bars_skrills stack" />
+            <hr class="bars_skrills stack_bar" id="stack" />
           </div>
           <h2 class="skills desiguer">Desiguer ux/ui</h2>
           <div class="bars_container">
-            <hr class="bars_skrills desiguer" />
+            <hr class="bars_skrills desiguer_bar" />
           </div>
           <h2 class="skills web">Web Desiguer</h2>
           <div class="bars_container">
-            <hr class="bars_skrills web" />
+            <hr class="bars_skrills web_bar" />
           </div>
         </div>
       </section>
@@ -86,16 +96,16 @@
         <div class="technologies_skills">
           <div class="box_skill"><img src="./assets/img/js.svg" alt="" /></div>
           <div class="box_skill">
-            <img src="./assets/img/html5.svg" alt="" />
+            <img src="./assets/img/html5.svg" />
           </div>
           <div class="box_skill">
-            <img src="./assets/img/css3-alt.svg" alt="" />
+            <img src="./assets/img/css3-alt.svg" />
           </div>
           <div class="box_skill">
-            <img src="./assets/img/node-js.svg" alt="" />
+            <img src="./assets/img/node-js.svg" />
           </div>
           <div class="box_skill">
-            <img src="./assets/img/react.svg" alt="" />
+            <img src="./assets/img/react.svg" />
           </div>
           <div class="box_skill">
             <img src="./assets/img/figma.svg" alt="" />
@@ -106,20 +116,26 @@
         <h2 class="tittle_briefcase tittles">Briefcase</h2>
         <hr class="line" />
         <div class="briefcase_carrusel">
-          <div class="arrow_left"></div>
-          <img
-            src="./assets/img/lu1080x1080.jpg"
-            width="250"
-            height="250"
-            alt="" />
-          <div class="arrow_rigth"></div>
+          <div class="arrow left">&#9664;</div>
+          <div class="arrow rigth">&#9654;</div>
+          <div class="container_img_carrusel">
+            <div class="slide">
+              <img class="img_carrusel" src="./assets/img/0.jpg" />
+            </div>
+            <div class="slide">
+              <img class="img_carrusel" src="./assets/img/1.jpg" />
+            </div>
+            <div class="slide">
+              <img class="img_carrusel" src="./assets/img/2.jpg" />
+            </div>
+          </div>
         </div>
       </section>
       <section class="contact_container">
         <h2 class="tittle_contact tittles">Contact</h2>
         <hr class="line" />
         <div class="contact_image_container">
-          <img src="./assets/img/email.svg" alt="" />
+          <img src="./assets/img/email.svg" />
         </div>
       </section>
     </main>
