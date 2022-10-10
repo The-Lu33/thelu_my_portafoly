@@ -71,7 +71,7 @@ slide.insertAdjacentElement("afterbegin", last);
 
 function nextSlide() {
   let first = document.querySelectorAll(".img_slide")[0];
-  slide.style.marginLeft = "-200%";
+  slide.style.marginLeft = "-100%";
   slide.style.transition = "all .5s  ease";
   setTimeout(function () {
     slide.style.transition = "none";
@@ -79,6 +79,7 @@ function nextSlide() {
     slide.style.marginLeft = "-100%";
   }, 500);
 }
+
 
 function backSlide() {
   let lastsection = document.querySelectorAll(".img_slide");
