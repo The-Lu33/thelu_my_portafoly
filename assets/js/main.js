@@ -5,6 +5,7 @@ let line2 = document.querySelector(".line2_menu");
 let line3 = document.querySelector(".line3_menu");
 let menuResponsive = document.querySelector(".menu_responsive");
 let scrollStop = document.querySelector("body");
+let linksNabvar = document.querySelectorAll(".link_nabvar");
 
 document
   .querySelector(".container_menu_nabvar")
@@ -17,6 +18,20 @@ function animationLine() {
   menuResponsive.classList.toggle("active_menu_responsive");
   scrollStop.classList.toggle("scrollStop");
 }
+linksNabvar.forEach((linksNabvar) => {
+  linksNabvar.addEventListener("click", () => {
+    menuResponsive.classList.remove("active_menu_responsive");
+    scrollStop.classList.remove("scrollStop");
+    line1.classList.remove("active_line1_menu");
+    line2.classList.remove("active_line2_menu");
+    line3.classList.remove("active_line3_menu");
+  });
+});
+const nav = document.querySelector(".nabvar_first");
+
+window.addEventListener("scroll", () => {
+  nav.classList.toggle("active_nabvar_fixed", window.scrollY > 0);
+});
 
 // skills-bars-efect
 let skillBar1 = document.querySelector(".stack_bar");
