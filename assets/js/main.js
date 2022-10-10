@@ -31,6 +31,7 @@ const nav = document.querySelector(".nabvar_first");
 
 window.addEventListener("scroll", () => {
   nav.classList.toggle("active_nabvar_fixed", window.scrollY > 0);
+ 
 });
 
 // skills-bars-efect
@@ -72,12 +73,12 @@ slide.insertAdjacentElement("afterbegin", last);
 function nextSlide() {
   let first = document.querySelectorAll(".img_slide")[0];
   slide.style.marginLeft = "-100%";
-  slide.style.transition = "all .5s  ease";
+  slide.style.transition = "all 1s  ease";
   setTimeout(function () {
     slide.style.transition = "none";
     slide.insertAdjacentElement("beforeend", first);
-    slide.style.marginLeft = "-100%";
-  }, 500);
+    slide.style.marginLeft = "-50%";
+  }, 1000);
 }
 
 
@@ -85,12 +86,12 @@ function backSlide() {
   let lastsection = document.querySelectorAll(".img_slide");
   let lastsection2 = lastsection[lastsection.length - 1];
   slide.style.marginLeft = "0%";
-  slide.style.transition = "all 0.5s ease";
+  slide.style.transition = "all 1s ease";
   setTimeout(function () {
     slide.style.transition = "none";
     slide.insertAdjacentElement("afterbegin", lastsection2);
     slide.style.marginLeft = "-100%";
-  }, 500);
+  }, 1000);
 }
 
 right.addEventListener("click", function () {
