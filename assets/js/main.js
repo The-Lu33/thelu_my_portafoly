@@ -45,26 +45,42 @@ windowsObs.observe(skillBar3);
 
 // briefcase
 
-const carrusel = document.querySelector(".container_img_carrusel");
-let slideChage = document.querySelectorAll(".img_carrusel");
-  console.log(slideChage);
-let last = slideChage[slideChage.length - 1];
-console.log(last);
-const next = document.querySelector(".rigth");
+const slideContainer = document.querySelector(".container_slide");
+let slide = document.querySelector(".slide");
+let image = document.querySelectorAll(".section_slide");
+let last = image[image.length - 1];
+const right = document.querySelector(".rigth");
 const back = document.querySelector(".left");
 
-carrusel.insertAdjacentElement("afterbegin", last);
+slide.insertAdjacentElement("afterbegin", last);
 
-function nextImg() {
-  let changeFirts = document.querySelectorAll(".img_carrusel")[0];
-  slideChage.style.marginLeft = "-100%";
-  slideChage.style.transition = "all 0.5s";
-  setTimeout(function() {
-    slideChage.style.transition = "none";
-    slideChage.insertAdjacentElement("beforeend", changeFirts);
-    slideChage.style.marginLeft = "-100%";
+function nextSlide() {
+  let first = document.querySelectorAll(".img_slide")[0];
+  slide.style.marginLeft = "-200%";
+  slide.style.transition = "all .5s  ease";
+  setTimeout(function () {
+    slide.style.transition = "none";
+    slide.insertAdjacentElement("beforeend", first);
+    slide.style.marginLeft = "-100%";
   }, 500);
 }
-next.addEventListener("click", function () {
-  nextImg();
+
+function backSlide() {
+  let lastsection = document.querySelectorAll(".img_slide");
+  let lastsection2 = lastsection[lastsection.length - 1];
+  slide.style.marginLeft = "0%";
+  slide.style.transition = "all 0.5s ease";
+  setTimeout(function () {
+    slide.style.transition = "none";
+    slide.insertAdjacentElement("afterbegin", lastsection2);
+    slide.style.marginLeft = "-100%";
+  }, 500);
+}
+
+right.addEventListener("click", function () {
+  nextSlide();
+});
+
+back.addEventListener("click", function () {
+  backSlide();
 });

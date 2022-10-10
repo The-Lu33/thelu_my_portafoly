@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Lú</title>
+    <link rel="shortcut icon" href="./assets/img/log.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -20,11 +21,17 @@
         <div class="menu_responsive menu_navbar">
           <ul>
             <li><a href="#">Home</a></li>
+            <hr class="line">
             <li><a href="#">About Me</a></li>
+            <hr class="line">
             <li><a href="#">SKills</a></li>
+            <hr class="line">
             <li><a href="#">Techonologies</a></li>
+            <hr class="line">
             <li><a href="#">Briefcase</a></li>
-            <li><a href="#">Contact</a></li>
+            <hr class="line">
+            <li><a href="#contact">Contact</a></li>
+            <hr class="line">
           </ul>
         </div>
       </nav>
@@ -116,26 +123,37 @@
         <h2 class="tittle_briefcase tittles">Briefcase</h2>
         <hr class="line" />
         <div class="briefcase_carrusel">
-          <div class="arrow left">&#9664;</div>
-          <div class="arrow rigth">&#9654;</div>
-          <div class="container_img_carrusel">
-            <div class="slide">
-              <img class="img_carrusel" src="./assets/img/0.jpg" />
+          <div class="arrow rigth" id="arrow_rigth arrow">&#9654;</div>
+          <div class="arrow left" id="arrow_left arrow">&#9664;</div>
+          
+          <div class="container_slide">
+            <div class="slide" id="slide">
+            
+              <div class="section_slide">
+
+                <img class="img_slide" src="./assets/img/0.jpg" />
+              </div>
+              <div class="section_slide">
+
+                <img class="img_slide" src="./assets/img/1.jpg" />
+              </div>
+              <div class="section_slide">
+
+                <img class="img_slide" src="./assets/img/2.jpg" />
+              </div>
+              
             </div>
-            <div class="slide">
-              <img class="img_carrusel" src="./assets/img/1.jpg" />
+              
             </div>
-            <div class="slide">
-              <img class="img_carrusel" src="./assets/img/2.jpg" />
-            </div>
-          </div>
         </div>
       </section>
-      <section class="contact_container">
+      <section class="contact_container" id="contact">
         <h2 class="tittle_contact tittles">Contact</h2>
         <hr class="line" />
         <div class="contact_image_container">
+         <a href="mailto:luiseducol13@gmail.com" target="_blank">
           <img src="./assets/img/email.svg" />
+         </a>
         </div>
       </section>
     </main>
