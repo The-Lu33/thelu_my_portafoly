@@ -481,6 +481,7 @@ footer > h2 {
  
   .nabvar_first{
     padding: 0 10px;
+    z-index: 100;
   }
   .menu_responsive {
     background: none;
@@ -645,6 +646,7 @@ footer > h2 {
   }
   .container_slide{
     width: 500px;
+    margin-top: 4rem;
   }
   .slide {
    margin-left:0 ;
