@@ -77,7 +77,7 @@ function nextSlide() {
   setTimeout(function () {
     slide.style.transition = "none";
     slide.insertAdjacentElement("beforeend", first);
-    slide.style.marginLeft = "-50%";
+    slide.style.marginLeft = "-100%";
   }, 1000);
 }
 
