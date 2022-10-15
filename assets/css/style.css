@@ -489,17 +489,20 @@ footer > h2 {
   .nabvar_first{
     padding: 0 10px;
     z-index: 100;
+
   }
   .menu_responsive {
     background: none;
-    left: 0;
-    top: 0;
-    width: 70%;
-    position: relative;
-    height: 2.5rem;
+    height: 3rem;
     margin-top: 0;
     justify-content: center;
+    align-items: flex-end;
+    left: 0;
+    position: relative;
     
+  }
+  .tittle_navbar{
+    position: absolute;
   }
 
   .menu_responsive ul {
@@ -525,7 +528,7 @@ footer > h2 {
     transform: scale(1.1);
     cursor: pointer;
 }
-  }
+  
 
   .menu_responsive ul li hr {
  display: none;
@@ -585,12 +588,15 @@ footer > h2 {
 
   .section_about {
     height: 80vh;
-    margin: 0 auto;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    
+  
+  
   }
+
   .tittles {
     font-size: 50px;
   }
@@ -663,4 +669,105 @@ footer > h2 {
    margin-left:0 ;
 
   }
+}
+
+@media screen and (min-width: 992px) {
+  .menu_responsive ul li a {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0 0.5rem;
+  
+  }
+  .menu_responsive ul li a:hover{
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+  .principal_header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30px 1fr auto;
+    margin-top: 5rem;
+  }
+  
+  .image_container {
+    padding: 0;
+  }
+  .image_logo_the_lu,
+  .iam {
+    width: 250px;
+    height: 250px;
+  }
+  .iam {
+    grid-column: 0/1;
+    grid-row: 2/3;
+  }
+  .image_logo_the_lu {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .tittle_secundary {
+    font-size: 2rem;
+  }
+  .tittle_firts {
+    font-size: 75px;
+  }
+  .line_firts {
+    width: 250px;
+  }
+  .paragraph_firt {
+    font-size: 1.5rem;
+    padding: 0 5rem;
+  }
+  .button_social img:hover{
+    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+  }
+
+  .section_about {
+    height: 80vh;
+    margin: 0 auto;
+    justify-content: space-evenly;
+
+  
+  
+}
+.contact_container{
+  height: 100vh;
+}
+.paragraph_about{
+    width: 450px;
+}
+.container_skills{
+  width: 400px;
+  height: 400px;
+}
+.section_skrills .container_tittle {
+  margin-bottom: 3rem;
+}
+.skills {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top:2rem
+}
+.bars_container {
+  width: 300px;
+  height: 1rem;
+  margin-top: 0.2rem;
+  border-radius: 45px;
+  background: #161616;
+  box-shadow:  2px 2p x 3px #090909,
+               -2px -2px 3px #232323;
+}
+.technologies_skills{
+
+}
+.techonologies_container .container_tittle{
+  margin-bottom: 3rem;
+}
+.box_skill{
+  height: 100px;
+  width: 100px;
+}
+
 }
