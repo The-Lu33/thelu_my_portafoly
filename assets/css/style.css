@@ -38,6 +38,7 @@ body {
 .active_nabvar_fixed {
   background-color: rgba(22, 22, 22, 0.9);
   transition: all 0.5s ease;
+  z-index: 100;
 }
 .tittle_navbar {
   font-weight: 400;
@@ -180,7 +181,7 @@ section[id] {
   border: none;
   height: 5px;
   border-radius: 5px;
-  margin-bottom: 35px;
+  margin-bottom: 0.5rem;
   background: radial-gradient(
     100% 3841599.97% at 0% -500.09%,
     #7c1773 6.77%,
@@ -192,7 +193,7 @@ section[id] {
   font-weight: 400;
   font-size: 22px;
   padding: 0 60px;
-  margin-bottom: 65px;
+  margin-bottom: 2rem
 }
 .buttons_sociales {
   width: 360px;
@@ -200,7 +201,7 @@ section[id] {
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
-  margin-bottom: 7rem;
+  margin-bottom: 1rem;
 }
 .button_social {
   
@@ -241,9 +242,11 @@ section[id] {
 .section_about {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   text-align: center;
   width: 340px;
+  height: 100vh;
   margin: 0 auto;
   margin-bottom: 7.75rem;
 }
@@ -331,16 +334,14 @@ section[id] {
 
 .techonologies_container {
   width: 300px;
-  height: 300px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  margin-bottom: 7.5rem;
 }
-.techonologies_container > div > .line {
-  margin-bottom: 2.5rem;
-}
+
 .technologies_skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -357,35 +358,39 @@ section[id] {
   align-items: center;
   justify-content: center;
 }
+.box_skill:hover {
+  box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+  transform: scale(1.1);
+}
 .box_skill > img {
-  width: 50px;
-  height: 50px;
+  width: 80%;
+  height: 60%;
 }
 /* briefcard */
 
 .briefcase_container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-bottom: 7.5rem;
 }
-.briefcase_container > .line {
-  width: 125px;
-  margin-bottom: 2.5rem;
-}
+
 /* carrusel */
 .briefcase_carrusel {
   position: relative;
 }
 .container_slide {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 25px;
   box-shadow: -25px -25px 50px #232323, 25px 25px 50px #090909;
   overflow: hidden;
   transition: all 0.5s ease;
+  display: flex;
+  /* justify-content: center */
+  align-items: center;
 
 }
 .slide {
@@ -431,6 +436,9 @@ section[id] {
 }
 .arrow:hover {
   cursor: pointer;
+  box-shadow: 2px 2px 6px var(--red), -2px -2px 6px var(--rosa-light);
+  transform: scale(1.1);
+  
 }
 .left {
   left: -3rem;
@@ -445,11 +453,10 @@ section[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 75vh;
 }
-.contact_container > .line {
-  width: 100px;
-  margin-bottom: 2.5rem;
-}
+
 .contact_image_container {
   width: 150px;
   height: 150px;
@@ -514,9 +521,10 @@ footer > h2 {
 
   .menu_responsive ul li a:hover{
     border-radius: 20px;
-    background: linear-gradient(145deg, #181818, #141414);
-    box-shadow:  3px 3px 7px #090909,
-                 -3px -3px 7px #232323;
+    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    transform: scale(1.1);
+    cursor: pointer;
+}
   }
 
   .menu_responsive ul li hr {
@@ -590,7 +598,7 @@ footer > h2 {
     width: 250px;
   }
   .paragraph_about {
-    width: 333px;
+    width: 360px;
     height: 162px;
     margin: 0 1rem;
     font-size: 20px;
@@ -647,6 +655,9 @@ footer > h2 {
   .container_slide{
     width: 500px;
     margin-top: 4rem;
+  }
+  .contact_container div .line{
+    margin-bottom: 2.5rem;
   }
   .slide {
    margin-left:0 ;
