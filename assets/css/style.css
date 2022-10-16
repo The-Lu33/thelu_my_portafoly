@@ -237,7 +237,9 @@ section[id] {
     #db0414 100%
   );
 }
-
+.container_tittle .line{
+  /* margin-bottom: 2rem; */
+}
 /* --about me-- */
 .section_about {
   display: flex;
@@ -343,6 +345,7 @@ section[id] {
 }
 
 .technologies_skills {
+  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -380,6 +383,7 @@ section[id] {
 /* carrusel */
 .briefcase_carrusel {
   position: relative;
+  margin-top: 2.5rem;
 }
 .container_slide {
   width: 300px;
@@ -468,6 +472,7 @@ section[id] {
   align-items: center;
   margin: 0 auto;
   margin-bottom: 3.5rem;
+  margin-top: 2.5rem;
 }
 .contact_image_container > img {
   width: 90px;
