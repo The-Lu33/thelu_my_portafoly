@@ -1,13 +1,13 @@
 <script>
 	//your script here
-	import Nabvar from "./lib/Nabvar.svelte";
-	import Header from "./lib/Header.svelte";
-	import About from "./lib/About.svelte";
-	import Skrills from "./lib/Skrills.svelte";
-	import Techonologies from "./lib/Techonologies.svelte";
-	import Briefcase from "./lib/Briefcase.svelte";
-	import Contact from "./lib/Contact.svelte";
-	import Footer from "./lib/Footer.svelte";
+	import Nabvar from "./components/Nabvar.svelte";
+	import Header from "./components/Header.svelte";
+	import About from "./components/About.svelte";
+	import Skrills from "./components/Skrills.svelte";
+	import Techonologies from "./components/Techonologies.svelte";
+	import Briefcase from "./components/Briefcase.svelte";
+	import Contact from "./components/Contact.svelte";
+	import Footer from "./components/Footer.svelte";
 	import { onMount } from "svelte";
   
   
