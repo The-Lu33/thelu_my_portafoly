@@ -6,7 +6,7 @@
     <section class="principal_header" id="principal_header">
         <div class="image_container">
           <img alt="imagens" src="./image/0.jpg" class="image_logo_the_lu" />
-          <img alt="imagens" src="./image/iam.svg" class="iam" />
+          <img alt="imagens" src="./image/iam.png" class="iam" />
         </div>
         <article class="presentation_container">
           <h3 class="tittle_secundary">I AM</h3>
@@ -15,12 +15,11 @@
           <hr class="line_firts" />
           <p class="paragraph_firt">Full Stack Developer Designer ux/ui</p>
           <div class="buttons_sociales">
-            <button class="button_social button_twitter">
-              <!-- svelte-ignore security-anchor-rel-noreferrer -->
+            <!-- <button class="button_social button_twitter">
               <a href="https://twitter.com/The_Lu33" target="_blank">
                 <img alt="imagens" src="./image/twitter.svg" />
               </a>
-            </button>
+            </button> -->
             <button class="button_social button_linkedin">
               <!-- svelte-ignore security-anchor-rel-noreferrer -->
               <a

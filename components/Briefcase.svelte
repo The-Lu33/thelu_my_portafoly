@@ -1,14 +1,53 @@
 <script>
   import { hslide } from "./hslide.js";
   let slides = [
-    { id: 1, img: "./image/yourshops.jpg",link:'https://www.behance.net/gallery/156432395/YourShpos' },
-    { id: 2, img: "./image/item1.png",link:"https://rick-and-morty-by-vale-luis.netlify.app/" },
-    { id: 3, img: "./image/0.jpg" },
+    {
+      id: 1,
+      img: "./image/ecommerce_react.png",
+      link: "https://ecommerce-thelu.netlify.app/",
+      description:
+        "Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.",
+    },
+    {
+      id: 2,
+      img: "./image/yourshops.jpg",
+      link: "https://www.behance.net/gallery/156432395/YourShpos",
+      description:
+        "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.",
+    },
+    {
+      id: 3,
+      img: "./image/rickyandmorty.jpg",
+      link: "https://rick-and-morty-by-vale-luis.netlify.app/",
+      description:
+        "I made a team of two people a landing page of the Rick and Morty api where we also have filtering and details of each persaje according to their universe, in addition to knowing how many species there are in that universe according to the number of their respective universe.",
+    },
+    {
+      id: 4,
+      img: "./image/pokedex.png",
+      link: "https://pkedex-thelu.netlify.app/",
+      description:
+        "We perform in pair pokedex of the PokeApi with filters and detailing each pokemon that there are in addition to agragar styles for each pokemon q there are.",
+    },
+    {
+      id: 5,
+      img: "./image/ecommerceapi.png",
+      link: "https://ecommerceapi-es4b.onrender.com/api/v1/docs/#/",
+      description:
+        "I made a restapi of an ecommerce with flow of users, products and orders, also a database made in postgresql using an ORM as sequelize. ",
+    },
+    {
+      id: 6,
+      img: "./image/payforbinance.png",
+      link: "https://payforbinance.vercel.app/",
+      description:
+        "I am working on receiving payments with binance the world's largest exchange for stores or ecommerce, made with nextjs using nextui frontend for design and using its resources for the backend.",
+    },
   ];
   let car = 0;
   function changeSlide(slide) {
     car = slide;
-  } 
+  }
   const change = (num, min, max) => Math.min(Math.max(num, min), max);
   const transition_args = {
     duration: 700,
@@ -42,15 +81,15 @@
       <div class="slide_wal">
         {#each slides as slide, id}
           {#if id === car}
-          <a class="link" href={slides[car].link} target="_black">
-          
-            <img
-            src={slides[car].img}
-              alt="slide"
-              class="slide_img"
-              in:hslide={transition_args}
-              out:hslide={transition_args}
+            <a class="link" href={slides[car].link} target="_black">
+              <img
+                src={slides[car].img}
+                alt="slide"
+                class="slide_img"
+                in:hslide={transition_args}
+                out:hslide={transition_args}
               />
+              <p class="slide_description">{slides[car].description}</p>
             </a>
           {/if}
         {/each}
@@ -114,17 +153,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: 95%;
     height: 90%;
   }
   .slide_img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: unset;
     border-radius: 1rem;
   }
-  .slide_img:hover {
-    transform: scale(1.1);
+
+  .slide_description {
+    position: absolute;
+    border-radius: 1rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.852);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+
+    /* transition effect. not necessary */
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  .slide_wal:hover .slide_description {
+    visibility: visible;
+    opacity: 1;
   }
   .arrow {
     z-index: 20;
@@ -184,5 +242,28 @@
       right: -4rem;
       top: calc(50% - 20px);
     }
+  }
+  @media screen and (min-width: 1000px) {
+    .container_slide {
+      width: 450px;
+      height: 450px;
+    }
+    .briefcase_container {
+      height: 100vh;
+      margin-bottom: 5rem;
+    }
+    .slide_description {
+      font-size: 1.5rem;
+      color: var(--white-text);
+      font-weight: 400;
+    }
+    /* .left {
+      left: -4rem;
+      top: calc(50% - 20px);
+    }
+    .rigth {
+      right: -4rem;
+      top: calc(50% - 20px);
+    } */
   }
 </style>

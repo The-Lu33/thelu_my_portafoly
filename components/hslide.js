@@ -2,7 +2,7 @@
 import { cubicInOut, cubicOut } from 'svelte/easing'
 export function hslide(node, {
 	delay = 0,
-	duration = 120,
+	duration = 100,
 	easing = cubicInOut
 })  {
 	const style = getComputedStyle(node);
