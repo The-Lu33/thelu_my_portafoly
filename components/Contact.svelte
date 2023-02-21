@@ -13,7 +13,7 @@
     </a>
   </div>
   <div class="cv_download_container ">
-    <a href="./document/cv-global.pdf" download class="dowload_cv">
+    <a href="./document/luisangeltapia.pdf" download class="dowload_cv">
       <h2 class="text_cv">cv download</h2>
       <div>
 
