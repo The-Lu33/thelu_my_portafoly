@@ -11,7 +11,7 @@
 
 
 <nav class="nav"  class:show_nav={y >= 60}>
-  <h2 class="tittle_nabvar">The Lú</h2>
+  <h2 class="tittle_nabvar" translate="no" >The Lú</h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div on:click={btnNabvar} class="btn__Nabvar">
     <span class="line1" class:active_line1={active} />
@@ -41,7 +41,7 @@
         <hr class="line" />
       </li>
       <li>
-        <a href="#contact">Contac</a>
+        <a href="#contact">Contact</a>
         <hr class="line" />
       </li>
     </ul>
