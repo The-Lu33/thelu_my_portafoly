@@ -1,53 +1,60 @@
 <script>
-  import { hslide } from "./hslide.js";
+  import { hslide } from './hslide.js';
   let slides = [
     {
       id: 1,
-      img: "./image/ecommerce_react.png",
-      link: "https://ecommerce-thelu.netlify.app/",
+      img: './image/switmer.png',
       description:
-        "Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.",
+        'Create a web app for the sale of streaming services with a payment gateway such as PayPal and Binance. '
+    },
+    {
+      id: 1,
+      img: './image/ecommerce_react.png',
+      link: 'https://ecommerce-thelu.netlify.app/',
+      description:
+        'Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.'
     },
     {
       id: 2,
-      img: "./image/yourshops.jpg",
-      link: "https://www.behance.net/gallery/156432395/YourShpos",
+      img: './image/yourshops.jpg',
+      link: 'https://www.behance.net/gallery/156432395/YourShpos',
       description:
-        "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.",
+        'I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.'
     },
     {
       id: 3,
-      img: "./image/rickyandmorty.jpg",
-      link: "https://rick-and-morty-by-vale-luis.netlify.app/",
+      img: './image/rickyandmorty.jpg',
+      link: 'https://rick-and-morty-by-vale-luis.netlify.app/',
       description:
-        "I made a team of two people a landing page of the Rick and Morty api where we also have filtering and details of each persaje according to their universe, in addition to knowing how many species there are in that universe according to the number of their respective universe.",
+        'I made a team of two people a landing page of the Rick and Morty api where we also have filtering and details of each persaje according to their universe, in addition to knowing how many species there are in that universe according to the number of their respective universe.'
     },
     {
       id: 4,
-      img: "./image/pokedex.png",
-      link: "https://pkedex-thelu.netlify.app/",
+      img: './image/pokedex.png',
+      link: 'https://pkedex-thelu.netlify.app/',
       description:
-        "We perform in pair pokedex of the PokeApi with filters and detailing each pokemon that there are in addition to agragar styles for each pokemon q there are.",
+        'We perform in pair pokedex of the PokeApi with filters and detailing each pokemon that there are in addition to agragar styles for each pokemon q there are.'
     },
     {
       id: 5,
-      img: "./image/ecommerceapi.png",
-      link: "https://ecommerceapi-es4b.onrender.com/api/v1/docs/#/",
+      img: './image/ecommerceapi.png',
+      link: 'https://ecommerceapi-es4b.onrender.com/api/v1/docs/#/',
       description:
-        "I made a restapi of an ecommerce with flow of users, products and orders, also a database made in postgresql using an ORM as sequelize. ",
+        'I made a restapi of an ecommerce with flow of users, products and orders, also a database made in postgresql using an ORM as sequelize. '
     },
     {
       id: 6,
-      img: "./image/payforbinance.png",
-      link: "https://payforbinance.vercel.app/",
+      img: './image/payforbinance.png',
+      link: 'https://payforbinance.vercel.app/',
       description:
-        "I am working on receiving payments with binance the world's largest exchange for stores or ecommerce, made with nextjs using nextui frontend for design and using its resources for the backend.",
+        "I am working on receiving payments with binance the world's largest exchange for stores or ecommerce, made with nextjs using nextui frontend for design and using its resources for the backend."
     },
     {
       id: 7,
-      img:'./image/weatherapp.png',
-      link:"https://weather-app-brown-phi.vercel.app/",
-      description:"Create a current weather app in 3hrs with certain features using neumorphism designs in the Sveltekit framework."
+      img: './image/weatherapp.png',
+      link: 'https://weather-app-brown-phi.vercel.app/',
+      description:
+        'Create a current weather app in 3hrs with certain features using neumorphism designs in the Sveltekit framework.'
     }
   ];
   let car = 0;
@@ -57,7 +64,7 @@
   const change = (num, min, max) => Math.min(Math.max(num, min), max);
   const transition_args = {
     duration: 700,
-    delay: 10,
+    delay: 10
   };
   function next(e) {
     car = change(car + 1, 0, slides.length - 1);
@@ -77,7 +84,10 @@
   }
 </script>
 
-<section class="briefcase_container" id="briefcase_container">
+<section
+  class="briefcase_container"
+  id="briefcase_container"
+>
   <div class="container_tittle">
     <h2 class="tittle_briefcase tittles">Briefcase</h2>
     <hr class="line" />
@@ -87,7 +97,11 @@
       <div class="slide_wal">
         {#each slides as slide, id}
           {#if id === car}
-            <a class="link" href={slides[car].link} target="_black">
+            <a
+              class="link"
+              href={slides[car].link}
+              target="_black"
+            >
               <img
                 src={slides[car].img}
                 alt="slide"
@@ -101,11 +115,15 @@
         {/each}
       </div>
 
-      <button on:click={() => prev()} class="arrow left" id="arrow_left arrow"
-        >&#9664;</button
+      <button
+        on:click={() => prev()}
+        class="arrow left"
+        id="arrow_left arrow">&#9664;</button
       >
-      <button on:click={() => next()} class="arrow rigth" id="arrow_rigth arrow"
-        >&#9654;</button
+      <button
+        on:click={() => next()}
+        class="arrow rigth"
+        id="arrow_rigth arrow">&#9654;</button
       >
     </div>
   </div>
