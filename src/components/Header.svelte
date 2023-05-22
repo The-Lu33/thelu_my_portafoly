@@ -1,30 +1,66 @@
 <script>
+  import Line from './Line.svelte';
 </script>
 
-<section class="principal_header" id="principal_header">
+<section
+  class="principal_header"
+  id="principal_header"
+>
   <div class="image_container">
-    <img alt="imagens" src="./image/0.jpg" class="image_logo_the_lu" />
-    <img alt="imagens" src="./image/iam.png" class="iam" />
+    <img
+      alt="imagens"
+      src="./image/0.jpg"
+      class="image_logo_the_lu"
+    />
+    <img
+      alt="imagens"
+      src="./image/iam.png"
+      class="iam"
+    />
   </div>
   <article class="presentation_container">
     <h3 class="tittle_secundary">I AM</h3>
 
-    <h2 class="tittle_firts" translate="no">THE Lú</h2>
-    <hr class="line_firts" />
-    <p class="paragraph_firt" translate="no">
+    <h2
+      class="tittle_firts"
+      translate="no"
+    >
+      THE Lú
+    </h2>
+    <!-- <hr class="line_firts" /> -->
+    <span
+      class="line"
+         >
+      <Line />
+    </span>
+    <p
+      class="paragraph_firt"
+      translate="no"
+    >
       Full Stack Developer Designer ux/ui
     </p>
     <div class="buttons_sociales">
       <button class="button_social button_linkedin">
         <!-- svelte-ignore security-anchor-rel-noreferrer -->
-        <a href="https://www.linkedin.com/in/luisangel-tapia/" target="_blank"
-          ><img alt="imagens" src="./image/linkedin.svg" /></a
+        <a
+          href="https://www.linkedin.com/in/luisangel-tapia/"
+          target="_blank"
+          ><img
+            alt="imagens"
+            src="./image/linkedin.svg"
+          /></a
         >
       </button>
       <button class="button_social button_github">
         <!-- svelte-ignore security-anchor-rel-noreferrer -->
-        <a href="https://github.com/The-Lu33" target="_blank">
-          <img alt="imagens" src="./image/github.svg" />
+        <a
+          href="https://github.com/The-Lu33"
+          target="_blank"
+        >
+          <img
+            alt="imagens"
+            src="./image/github.svg"
+          />
         </a>
       </button>
     </div>
@@ -37,7 +73,7 @@
     flex-direction: column;
     align-items: center;
     /* margin-top: 3rem; */
-    height: 100vh;
+    margin-bottom: 3rem;
   }
   .image_container {
     padding: 1rem 1.5rem;
@@ -85,18 +121,9 @@
     text-shadow: -15px -15px 30px rgba(102, 102, 102, 0.2),
       15px 15px 30px rgba(255, 255, 255, 0.1);
   }
-  .line_firts {
+  .line {
     width: 200px;
     border: none;
-    height: 5px;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    background: radial-gradient(
-      100% 3841599.97% at 0% -500.09%,
-      #7c1773 6.77%,
-      #c60842 52.08%,
-      #db0414 100%
-    );
   }
   .paragraph_firt {
     font-weight: 400;
@@ -134,6 +161,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 30px 1fr auto;
+      height: 100vh;
     }
     .image_container {
       grid-column: 2/2;
@@ -169,7 +197,7 @@
     .tittle_firts {
       font-size: 75px;
     }
-    .line_firts {
+    .line {
       width: 250px;
     }
     .paragraph_firt {
@@ -206,7 +234,7 @@
     .tittle_firts {
       font-size: 75px;
     }
-    .line_firts {
+    .line {
       width: 250px;
     }
     .paragraph_firt {

@@ -1,35 +1,39 @@
 <script>
-  import IntersectionObserver from "svelte-intersection-observer";
-  import { tweened } from "svelte/motion";
-  import { backInOut } from "svelte/easing";
-  
+  import IntersectionObserver from 'svelte-intersection-observer';
+  import { tweened } from 'svelte/motion';
+  import { backInOut } from 'svelte/easing';
 
   export let skill;
   export let percent;
   export let delTime;
-  
-  
 
-  const progress = tweened(30, {
+  let progress = tweened(30, {
     delay: delTime,
-    duration: 2000,
-    easing: backInOut,
-  }); 
- export let element;
- export let intersecting;
-$:intersecting && progress.set(percent);
-
-
+    duration: 1000,
+    easing: backInOut
+  });
+  let element;
+  let intersecting;
+  $: intersecting ? progress.set(percent) : progress.set(50)
 </script>
-<!-- {intersecting ? "Element is in view" : "Element is not in view"} -->
 
-<IntersectionObserver  element={element}
-bind:intersecting={intersecting}
-once>
-<h2 class="skill">{skill}</h2>
-<div  class:intersecting={intersecting} class="container">
-  <div bind:this={element} class="skills" style="width: {$progress}%" />
-</div>
+<!-- {intersecting ? 'Element is in view' : 'Element is not in view'} -->
+
+<IntersectionObserver
+  {element}
+  bind:intersecting
+>
+  <h2 class="skill">{skill}</h2>
+  <div
+    class:intersecting
+    class="container"
+  >
+    <div
+      bind:this={element}
+      class="skills"
+      style="width: {$progress}%"
+    />
+  </div>
 </IntersectionObserver>
 
 <style>

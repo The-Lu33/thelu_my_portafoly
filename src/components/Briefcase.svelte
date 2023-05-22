@@ -1,4 +1,5 @@
 <script>
+  import Line from './Line.svelte';
   import { hslide } from './hslide.js';
   let slides = [
     {
@@ -48,13 +49,6 @@
       link: 'https://payforbinance.vercel.app/',
       description:
         "I am working on receiving payments with binance the world's largest exchange for stores or ecommerce, made with nextjs using nextui frontend for design and using its resources for the backend."
-    },
-    {
-      id: 7,
-      img: './image/weatherapp.png',
-      link: 'https://weather-app-brown-phi.vercel.app/',
-      description:
-        'Create a current weather app in 3hrs with certain features using neumorphism designs in the Sveltekit framework.'
     }
   ];
   let car = 0;
@@ -90,7 +84,9 @@
 >
   <div class="container_tittle">
     <h2 class="tittle_briefcase tittles">Briefcase</h2>
-    <hr class="line" />
+    <span class="line">
+      <Line />
+    </span>
   </div>
   <div class="briefcase_carrusel">
     <div class="container_slide">
@@ -132,7 +128,7 @@
 <style>
   .line {
     border: none;
-    height: 5px;
+    /* height: 5px;
     border-radius: 5px;
 
     background: radial-gradient(
@@ -140,7 +136,7 @@
       #7c1773 6.77%,
       #c60842 52.08%,
       #db0414 100%
-    );
+    ); */
   }
   .tittles {
     font-size: 25px;

@@ -1,24 +1,46 @@
 <script>
-	let active = false;
+  let active = false;
   let btnNabvar = () => {
     active = !active;
   };
   let y;
-
 </script>
- 
- <svelte:window bind:scrollY={y} />
 
+<svelte:window bind:scrollY={y} />
 
-<nav class="nav"  class:show_nav={y >= 60}>
-  <h2 class="tittle_nabvar" translate="no" >The Lú</h2>
+<nav
+  class="nav"
+  class:show_nav={y >= 60}
+  class:active_menu_responsive_nav={active}
+>
+  <h2
+    class="tittle_nabvar"
+    translate="no"
+  >
+    The Lú
+  </h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div on:click={btnNabvar} class="btn__Nabvar">
-    <span class="line1" class:active_line1={active} />
-    <span class="line2" class:active_line2={active} />
-    <span class="line3" class:active_line3={active} />
+  <div
+    on:click={btnNabvar}
+    class="btn__Nabvar"
+  >
+    <span
+      class="line1"
+      class:active_line1={active}
+    />
+    <span
+      class="line2"
+      class:active_line2={active}
+    />
+    <span
+      class="line3"
+      class:active_line3={active}
+    />
   </div>
-  <div class="menu_responsive" class:active_menu_responsive={active}>
+  <div
+    class="menu_responsive"
+    class:active_menu_responsive={active}
+  >
     <ul>
       <li>
         <a href="#principal_header">home</a>
@@ -46,8 +68,7 @@
       </li>
     </ul>
   </div>
-</nav> 
-
+</nav>
 
 <style>
   .line {
@@ -62,7 +83,7 @@
       #db0414 100%
     );
   }
-  .show_nav{
+  .show_nav {
     background: rgba(22, 22, 22, 0.9);
     border-radius: 0 0 1rem 1rem;
   }
@@ -70,14 +91,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
     font-size: 1.5rem;
     transition: all 0.5s ease;
-    position: fixed;
+    position: absolute;
+    overflow: hidden;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     z-index: 100;
+
     /* background-color: #7c1773; */
   }
   h2 {
@@ -136,7 +158,9 @@
   .active_menu_responsive {
     right: 0;
   }
- 
+  .active_menu_responsive_nav {
+    background-color: rgba(22, 22, 22, 0.9);
+  }
   .menu_responsive ul li a {
     color: var(--white-p);
     font-size: 25px;

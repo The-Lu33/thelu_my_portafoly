@@ -1,28 +1,32 @@
 <script>
-  //your script here
+  import { Motion } from 'svelte-motion';
+  import Line from './Line.svelte';
 </script>
 
-<main>
-  <section class="section_about" id="section_about">
-    <div class="container_tittle">
-      <h2 class="tittle_about tittles">About Me</h2>
-      <hr class="line" />
-    </div>
-    <div class="container_p">
-      <p class="paragraph_about">
-        Junior programmer hungry for success, hard working and always trying to
-        find the most innovative way possible, always taking each task or
-        project to its maximum expression. In fact, a junior programmer with few
-        experiences but with great expectations about the technological world.
-      </p>
-    </div>
-  </section>
-</main>
+<section
+  class="section_about"
+  id="section_about"
+>
+  <div class="container_tittle">
+    <h2 class="tittle_about tittles">About Me</h2>
+    <span class="line">
+      <Line />
+    </span>
+  </div>
+  <div class="container_p">
+    <p class="paragraph_about">
+      I am a full stack developer, a retailer committed to work in search of new
+      learning, working to obtain the best experience for development, a team or
+      solo worker, sociable and also prepared to lead if necessary. himself a
+      committed programmer and prepared to give the best of himself every day.
+    </p>
+  </div>
+</section>
 
 <style>
   .line {
     border: none;
-    height: 5px;
+    /* height: 5px;
     border-radius: 5px;
 
     background: radial-gradient(
@@ -31,6 +35,7 @@
       #c60842 52.08%,
       #db0414 100%
     );
+    */
   }
   .tittles {
     font-size: 25px;
@@ -58,15 +63,34 @@
     font-weight: 400;
     font-size: 1rem;
     text-align: center;
+    padding: 1rem;
+  }
+  .container_p {
+    width: 350px;
+    height: 250px;
+    border-radius: 30px;
+    background: #161616;
+    box-shadow: 15px 15px 30px #090909, -15px -15px 30px #232323;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  .container_tittle {
+    z-index: 10;
+    margin-bottom: 2rem;
+
   }
   @media screen and (min-width: 744px) {
     .section_about {
       width: 100%;
-      height: 80vh;
       justify-content: space-evenly;
       flex-direction: row;
       align-items: center;
       gap: 2rem;
+    }
+    .container_p {
+      width: 450px;
+      height: 450px;
     }
 
     .tittles {
@@ -76,10 +100,8 @@
       width: 250px;
     }
     .paragraph_about {
-      width: 360px;
-      height: 162px;
       margin: 0 1rem;
-      font-size: 20px;
+      font-size: 1.5rem;
       grid-row: 2/3;
       grid-column: 2/3;
     }
@@ -94,8 +116,6 @@
     }
   }
   @media screen and (min-width: 992px) {
-    
-
     .tittles {
       font-size: 50px;
     }
@@ -103,10 +123,8 @@
       width: 250px;
     }
     .paragraph_about {
-      width: 360px;
-      height: 162px;
       margin: 0 1rem;
-      font-size: 20px;
+      /* font-size; */
       grid-row: 2/3;
       grid-column: 2/3;
     }
