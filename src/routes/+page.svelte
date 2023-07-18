@@ -24,7 +24,6 @@
   </div>
 {/if}
 <main>
-  <Nabvar />
   <div class="div">
     <Header />
   </div>

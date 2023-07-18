@@ -20,7 +20,7 @@
     The Lú
   </h2>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div
+  <!-- <div
     on:click={btnNabvar}
     class="btn__Nabvar"
   >
@@ -67,27 +67,11 @@
         <hr class="line" />
       </li>
     </ul>
-  </div>
+  </div> -->
 </nav>
 
 <style>
-  .line {
-    border: none;
-    height: 5px;
-    border-radius: 5px;
-
-    background: radial-gradient(
-      100% 3841599.97% at 0% -500.09%,
-      #7c1773 6.77%,
-      #c60842 52.08%,
-      #db0414 100%
-    );
-  }
-  .show_nav {
-    background: rgba(22, 22, 22, 0.9);
-    border-radius: 0 0 1rem 1rem;
-  }
-  .nav {
+   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,121 +91,5 @@
     font-size: 1.5rem;
     font-weight: 400;
     margin-left: 1rem;
-  }
-  .btn__Nabvar {
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-  }
-  .btn__Nabvar span {
-    display: block;
-    height: 2px;
-    margin-top: 5px;
-    transform-origin: 0px 100%;
-    transition: all 300ms;
-  }
-  .line1 {
-    background-color: var(--red);
-  }
-  .line2 {
-    background-color: var(--rosa-light);
-    width: 75%;
-    margin-left: 25%;
-  }
-  .line3 {
-    background-color: var(--morado-light);
-  }
-
-  .active_line1 {
-    transform: rotate(90deg);
-  }
-  .active_line2 {
-    transform: rotate(90deg) translate(-50%, -0);
-  }
-  .active_line3 {
-    transform: rotate(90deg) translate(-14px, -16px);
-  }
-  .menu_responsive {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    right: -100%;
-    top: 0;
-    align-items: center;
-    position: absolute;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 47px;
-    transition: all 1000ms;
-    background-color: rgba(22, 22, 22, 0.9);
-  }
-  .active_menu_responsive {
-    right: 0;
-  }
-  .active_menu_responsive_nav {
-    background-color: rgba(22, 22, 22, 0.9);
-  }
-  .menu_responsive ul li a {
-    color: var(--white-p);
-    font-size: 25px;
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .menu_responsive ul li hr {
-    margin-bottom: 1.5rem;
-  }
-  .menu_responsive ul li {
-    list-style: none;
-  }
-  @media screen and (min-width: 744px) {
-    .btn__Nabvar {
-      display: none;
-    }
-    .tittle_nabvar {
-      position: absolute;
-    }
-    .menu_responsive {
-      background: none;
-      height: 3rem;
-      margin-top: 0;
-      justify-content: center;
-      align-items: flex-end;
-      left: 0;
-      position: relative;
-    }
-    .menu_responsive ul {
-      display: flex;
-      position: fixed;
-    }
-    .menu_responsive ul li a {
-      font-size: 1rem;
-      font-weight: 400;
-      padding: 0 0.5rem;
-      margin: 0 0.25rem;
-    }
-    .menu_responsive ul li a:hover {
-      border-radius: 20px;
-      box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
-      transform: scale(1.1);
-      cursor: pointer;
-    }
-
-    .menu_responsive ul li hr {
-      display: none;
-    }
-    @media screen and (min-width: 992px) {
-      .menu_responsive ul li a {
-        font-size: 1rem;
-        font-weight: 400;
-        padding: 0 0.5rem;
-      }
-      .menu_responsive ul li a:hover {
-        border-radius: 20px;
-        box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
-        transform: scale(1.1);
-        cursor: pointer;
-      }
-    }
   }
 </style>
