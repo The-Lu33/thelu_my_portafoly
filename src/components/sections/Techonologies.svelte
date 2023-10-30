@@ -118,6 +118,18 @@
       link: "",
       transition: { duration: 14, times: [0, 0.2, 1] },
       
+    },{
+      img: "./image/android.svg",
+      title: "android developer",
+      link: "",
+      transition: { duration: 14, times: [0, 0.2, 1] },
+      
+    },{
+      img: "./image/python.svg",
+      title: "python",
+      link: "",
+      transition: { duration: 14, times: [0, 0.2, 1] },
+      
     },
   ];
 </script>
@@ -228,11 +240,11 @@
       margin-bottom: 5rem;
     }
     .technologies_skills {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(4, 1fr);
     }
     .box_skill {
-      margin: 1.25rem;
+      margin: 1rem;
     }
   }
   @media screen and (min-width: 1024px) {
