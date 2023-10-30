@@ -1,13 +1,8 @@
 <script>
-  import Line from './Line.svelte';
-
-  //your script here
+  import Line from "./Line.svelte";
 </script>
 
-<section
-  class="contact_container"
-  id="contact"
->
+<section class="contact_container" id="contact">
   <div class="container_tittle">
     <h2 class="tittle_contact tittles">Contact</h2>
     <span class="line">
@@ -15,28 +10,22 @@
     </span>
   </div>
   <div class="contact_image_container">
-    <a
-      href="mailto:luiseducol13@gmail.com"
-      target="_blank"
-    >
-      <img
-        src="./image/email.svg"
-        alt="email"
-      />
+    <a href="mailto:luiseducol13@gmail.com" target="_blank">
+      <img src="./image/email.svg" alt="email" />
     </a>
   </div>
   <div class="cv_download_container">
     <a
-      href="./document/Luisangel tapia.pdf"
-      download
-      class="dowload_cv"
+      href="https://api.whatsapp.com/send?phone=593998651891&text=Hola%F0%9F%91%8B%2C%20The%20L%C3%BA%F0%9F%98%81"
     >
+      <img src="./ws.svg" alt="wsIcon" />
+    </a>
+  </div>
+  <div class="cv_download_container">
+    <a href="./document/Luisangel_tapia_cv.pdf" download class="dowload_cv">
       <h2 class="text_cv">cv download</h2>
       <div>
-        <img
-          src="./image/bxs-cloud-download.svg"
-          alt="dowmload_cv"
-        />
+        <img src="./image/bxs-cloud-download.svg" alt="dowmload_cv" />
       </div>
     </a>
   </div>
@@ -65,7 +54,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: auto;
   }
 
   .contact_image_container,
@@ -94,6 +83,7 @@
     width: 90px;
     height: 70px;
   }
+
   .dowload_cv {
     display: flex;
     flex-direction: column;
@@ -108,17 +98,19 @@
   .cv_download_container > a {
     text-decoration: none;
   }
+
   @media screen and (min-width: 768px) {
     .tittles {
       font-size: 50px;
     }
     .text_cv {
-      font-size: 2remw;
+      font-size: 2rem;
     }
     .contact_container {
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
+      height: 100vh;
     }
     .contact_image_container,
     .cv_download_container {
@@ -129,6 +121,9 @@
     .cv_download_container img {
       width: 180px;
       height: 120px;
+    }
+    .contact_image_container {
+      display: none;
     }
   }
 </style>

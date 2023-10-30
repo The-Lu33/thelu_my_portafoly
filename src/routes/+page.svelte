@@ -1,14 +1,14 @@
 <script>
   //your script here
-  import Nabvar from '../components/Nabvar.svelte';
-  import About from '../components/About.svelte';
-  import Skrills from '../components/Skrills.svelte';
-  import Techonologies from '../components/Techonologies.svelte';
-  import Briefcase from '../components/Briefcase.svelte';
-  import Contact from '../components/Contact.svelte';
-  import Footer from '../components/Footer.svelte';
-  import { onMount } from 'svelte';
-  import Header from '../components/Header.svelte';
+  import Nabvar from "../components/sections/Nabvar.svelte";
+  import About from "../components/sections/About.svelte";
+  import Skrills from "../components/sections/Skrills.svelte";
+  import Techonologies from "../components/sections/Techonologies.svelte";
+  import Briefcase from "../components/sections/Briefcase.svelte";
+  import Contact from "../components/sections/Contact.svelte";
+  import Footer from "../components/sections/Footer.svelte";
+  import { onMount } from "svelte";
+  import Header from "../components/sections/Header.svelte";
 
   let load = false;
   onMount(() => {
@@ -20,7 +20,7 @@
 
 {#if !load}
   <div class="loader_container">
-    <span class="load">!Hello World!...</span>
+    <span class="load">!Hello World..!</span>
   </div>
 {/if}
 <main>
@@ -49,7 +49,7 @@
 
 <!-- -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
   :global(:root) {
     --red: #db0414;
     --rosa-light: #c60842;
@@ -69,7 +69,7 @@
 
   :global(body) {
     background-color: var(--fond);
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Permanent Marker", cursive;
     transition: all 0.5s ease;
     animation: all 0.5s ease;
   }

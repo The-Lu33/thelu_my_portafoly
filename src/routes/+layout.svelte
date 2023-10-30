@@ -1,5 +1,5 @@
 <script>
-  import Nabvar from '../components/Nabvar.svelte';
+  import Nabvar from '../components/sections/Nabvar.svelte';
   import './app.css';
 </script>
 

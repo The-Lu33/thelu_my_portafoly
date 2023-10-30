@@ -1,12 +1,11 @@
+import { cubicInOut } from 'svelte/easing'
 
-import { cubicInOut, cubicOut } from 'svelte/easing'
 export function hslide(node, {
 	delay = 0,
 	duration = 100,
 	easing = cubicInOut
-})  {
+}) {
 	const style = getComputedStyle(node);
-	const opacity = +style.opacity;
 	const width = parseFloat(style.width);
 	const padding_left = parseFloat(style.paddingLeft);
 	const padding_right = parseFloat(style.paddingRight);
@@ -21,7 +20,6 @@ export function hslide(node, {
 		easing,
 		css: t =>
 			`overflow: hidden;` +
-			`opacity: ${Math.min(t * 20, 1) * opacity};` +
 			`width: ${t * width}px;` +
 			`padding-left: ${t * padding_left}px;` +
 			`padding-right: ${t * padding_right}px;` +
@@ -31,4 +29,3 @@ export function hslide(node, {
 			`border-right-width: ${t * border_right_width}px;`
 	};
 }
-

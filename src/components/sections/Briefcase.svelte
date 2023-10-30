@@ -1,56 +1,56 @@
 <script>
-  import Line from './Line.svelte';
-  import { hslide } from './hslide.js';
+  import Line from "./Line.svelte";
+  import { hslide } from "../hslide";
   let slides = [
     {
-      id: 1,
-      img: './image/switmer.png',
+      id: 0,
+      img: "./image/yourshops-courier.png",
+      link: "https://www.behance.net/gallery/156432395/YourShpos",
       description:
-        'Create a web app for the sale of streaming services with a payment gateway such as PayPal and Binance. '
+        "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.",
+      tec: ["nextjs.svg", "postgresql.svg"],
     },
     {
       id: 1,
-      img: './image/ecommerce_react.png',
-      link: 'https://ecommerce-thelu.netlify.app/',
+      img: "./image/switmer.png",
       description:
-        'Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.'
+        "Create a web app for the sale of streaming services with a payment gateway such as PayPal and Binance. ",
+      tec: ["nextjs.svg", "mongodb.svg"],
     },
     {
       id: 2,
-      img: './image/yourshops.jpg',
-      link: 'https://www.behance.net/gallery/156432395/YourShpos',
+      img: "./image/ecommerce_react.png",
+      link: "https://ecommerce-thelu.netlify.app/",
       description:
-        'I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.'
+        "Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.",
+      tec: ["react.svg", "postgresql.svg"],
     },
     {
       id: 3,
-      img: './image/rickyandmorty.jpg',
-      link: 'https://rick-and-morty-by-vale-luis.netlify.app/',
+      img: "./image/rickyandmorty.jpg",
+      link: "https://rick-and-morty-by-vale-luis.netlify.app/",
       description:
-        'I made a team of two people a landing page of the Rick and Morty api where we also have filtering and details of each persaje according to their universe, in addition to knowing how many species there are in that universe according to the number of their respective universe.'
-    },
-    {
-      id: 4,
-      img: './image/pokedex.png',
-      link: 'https://pkedex-thelu.netlify.app/',
-      description:
-        'We perform in pair pokedex of the PokeApi with filters and detailing each pokemon that there are in addition to agragar styles for each pokemon q there are.'
+        "I made a team of two people a landing page of the Rick and Morty api where we also have filtering and details of each persaje according to their universe, in addition to knowing how many species there are in that universe according to the number of their respective universe.",
+      tec: ["react.svg"],
     },
     {
       id: 5,
-      img: './image/ecommerceapi.png',
-      link: 'https://ecommerceapi-es4b.onrender.com/api/v1/docs/#/',
+      img: "./image/ecommerceapi.png",
+      link: "https://ecommerceapi-es4b.onrender.com/api/v1/docs/#/",
       description:
-        'I made a restapi of an ecommerce with flow of users, products and orders, also a database made in postgresql using an ORM as sequelize. '
+        "I made a restapi of an ecommerce with flow of users, products and orders, also a database made in postgresql using an ORM as sequelize. ",
+      tec: ["nextjs.svg", "mongodb.svg"],
     },
     {
-      id: 6,
-      img: './image/payforbinance.png',
-      link: 'https://payforbinance.vercel.app/',
+      id: 4,
+      img: "./image/pokedex.png",
+      link: "https://pkedex-thelu.netlify.app/",
       description:
-        "I am working on receiving payments with binance the world's largest exchange for stores or ecommerce, made with nextjs using nextui frontend for design and using its resources for the backend."
-    }
+        "We perform in pair pokedex of the PokeApi with filters and detailing each pokemon that there are in addition to agragar styles for each pokemon q there are.",
+      tec: ["react.svg"],
+    },
   ];
+
   let car = 0;
   function changeSlide(slide) {
     car = slide;
@@ -58,7 +58,7 @@
   const change = (num, min, max) => Math.min(Math.max(num, min), max);
   const transition_args = {
     duration: 700,
-    delay: 10
+    delay: 2,
   };
   function next(e) {
     car = change(car + 1, 0, slides.length - 1);
@@ -78,10 +78,7 @@
   }
 </script>
 
-<section
-  class="briefcase_container"
-  id="briefcase_container"
->
+<section class="briefcase_container" id="briefcase_container">
   <div class="container_tittle">
     <h2 class="tittle_briefcase tittles">Briefcase</h2>
     <span class="line">
@@ -93,33 +90,34 @@
       <div class="slide_wal">
         {#each slides as slide, id}
           {#if id === car}
-            <a
-              class="link"
-              href={slides[car].link}
-              target="_black"
+            <div
+              class="img_container"
+              transition:hslide={"{duration: 500}"}
             >
-              <img
-                src={slides[car].img}
-                alt="slide"
-                class="slide_img"
-                in:hslide={transition_args}
-                out:hslide={transition_args}
-              />
-              <p class="slide_description">{slides[car].description}</p>
-            </a>
+              <a class="link" href={slides[car].link} target="_black">
+                <img src={slides[car].img} alt="slide" class="slide_img" />
+              </a>
+              <div class="tec_container">
+                {#each slide.tec as tec, index}
+                  <div class="box_skill">
+                    <img
+                      src={`./image/${slide.tec[index]}`}
+                      alt={slide.tec[index]}
+                      class="icon_skill"
+                    />
+                  </div>
+                {/each}
+              </div>
+            </div>
           {/if}
         {/each}
       </div>
 
-      <button
-        on:click={() => prev()}
-        class="arrow left"
-        id="arrow_left arrow">&#9664;</button
+      <button on:click={() => prev()} class="arrow left" id="arrow_left arrow"
+        >&#9664;</button
       >
-      <button
-        on:click={() => next()}
-        class="arrow rigth"
-        id="arrow_rigth arrow">&#9654;</button
+      <button on:click={() => next()} class="arrow right" id="arrow_right arrow"
+        >&#9654;</button
       >
     </div>
   </div>
@@ -171,6 +169,7 @@
   }
   .slide_wal {
     display: flex;
+
     align-items: center;
     justify-content: center;
     position: relative;
@@ -183,26 +182,21 @@
     object-fit: unset;
     border-radius: 1rem;
   }
-
-  .slide_description {
-    position: absolute;
-    border-radius: 1rem;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.852);
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-
-    /* transition effect. not necessary */
-    transition: opacity 0.2s, visibility 0.2s;
+  .tec_container {
+    display: flex;
+    flex-wrap: wrap;
   }
-  .slide_wal:hover .slide_description {
+
+  .slide_wal:hover {
     visibility: visible;
     opacity: 1;
+  }
+  .img_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .arrow {
     z-index: 20;
@@ -238,9 +232,29 @@
     left: -3rem;
     top: calc(50% - 20px);
   }
-  .rigth {
+  .right {
     right: -3rem;
     top: calc(50% - 20px);
+  }
+  .box_skill {
+    height: 50px;
+    width: 50px;
+    margin: 1rem;
+    border-radius: 10px;
+    background: #161616;
+    box-shadow: 3px 3px 6px #090909, -3px -3px 6px #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box_skill:hover {
+    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    transform: scale(1.1);
+  }
+
+  .icon_skill {
+    width: 80%;
+    height: 60%;
   }
   @media screen and (min-width: 768px) {
     .tittles {
@@ -258,7 +272,7 @@
       left: -4rem;
       top: calc(50% - 20px);
     }
-    .rigth {
+    .right {
       right: -4rem;
       top: calc(50% - 20px);
     }
@@ -272,16 +286,12 @@
       height: 100vh;
       margin-bottom: 5rem;
     }
-    .slide_description {
-      font-size: 1.5rem;
-      color: var(--white-text);
-      font-weight: 400;
-    }
+
     /* .left {
       left: -4rem;
       top: calc(50% - 20px);
     }
-    .rigth {
+    .right {
       right: -4rem;
       top: calc(50% - 20px);
     } */
