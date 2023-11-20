@@ -22,7 +22,7 @@
     </a>
   </div>
   <div class="cv_download_container">
-    <a href="./document/Luisangel_tapia_cv.pdf" download class="dowload_cv">
+    <a href="./luisangelcv.pdf" download="" class="dowload_cv">
       <h2 class="text_cv">cv download</h2>
       <div>
         <img src="./image/bxs-cloud-download.svg" alt="dowmload_cv" />
