@@ -42,15 +42,15 @@
     height: 1rem;
     margin-top: 0.2rem;
     border-radius: 45px;
-    background: #161616;
-    box-shadow: 2px 2px 3px #090909, -2px -2px 3px #232323;
+    background: var(--background);
+    box-shadow: 2px 2px 3px var(--box-shadow-top), -2px -2px 3px var(--box-shadow-button);
   }
 
   h2 {
     top: 26%;
     left: 15px;
     margin-top: 1.5rem;
-    color: var(--white-text);
+    color: var(--text);
     font-size: 1rem;
     font-weight: 400;
   }

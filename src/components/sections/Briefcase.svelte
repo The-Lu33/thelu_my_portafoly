@@ -1,28 +1,35 @@
 <script>
   import Line from "./Line.svelte";
   import { hslide } from "../hslide";
+  import { language } from "../../store/lang";
   let slides = [
     {
       id: 0,
       img: "./image/yourshops-courier.png",
       link: "https://www.behance.net/gallery/156432395/YourShpos",
-      description:
-        "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc.",
+      description: `${
+        $language === "en"
+          ? "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc."
+          : "Diseño logotipo y también administro una red de ventas al por menor o importador de artículos de moda como ropa para mujer, hombre y niño, relojes, lencería etc."
+      }`,
       tec: ["nextjs.svg", "postgresql.svg"],
     },
-    {
-      id: 1,
-      img: "./image/switmer.png",
-      description:
-        "Create a web app for the sale of streaming services with a payment gateway such as PayPal and Binance. ",
-      tec: ["nextjs.svg", "mongodb.svg"],
-    },
+    // {
+    //   id: 1,
+    //   img: "./image/switmer.png",
+    //   description:
+    //     "Create a web app for the sale of streaming services with a payment gateway such as PayPal and Binance. ",
+    //   tec: ["nextjs.svg", "mongodb.svg"],
+    // },
     {
       id: 2,
       img: "./image/ecommerce_react.png",
       link: "https://ecommerce-thelu.netlify.app/",
-      description:
-        "Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux.",
+      description: `${
+        $language === "en"
+          ? "Make an ecommerce with cart and purchase option. It also has filtered in addition to login and registration all done with Reactjs using some framework such as react-router or Redux."
+          : "Realiza un ecommerce con carrito y opción de compra. También se ha filtrado, además del inicio de sesión y el registro, todo realizado con Reactjs utilizando algún marco como reaccionar-router o Redux."
+      }`,
       tec: ["react.svg", "postgresql.svg"],
     },
     {
@@ -80,7 +87,9 @@
 
 <section class="briefcase_container" id="briefcase_container">
   <div class="container_tittle">
-    <h2 class="tittle_briefcase tittles">Briefcase</h2>
+    <h2 class="tittle_briefcase tittles">
+      {$language === "en" ? "Briefcase" : "Proyectos"}
+    </h2>
     <span class="line">
       <Line />
     </span>
@@ -90,10 +99,7 @@
       <div class="slide_wal">
         {#each slides as slide, id}
           {#if id === car}
-            <div
-              class="img_container"
-              transition:hslide={"{duration: 500}"}
-            >
+            <div class="img_container" transition:hslide={"{duration: 500}"}>
               <a class="link" href={slides[car].link} target="_black">
                 <img src={slides[car].img} alt="slide" class="slide_img" />
               </a>
@@ -138,7 +144,7 @@
   }
   .tittles {
     font-size: 25px;
-    color: var(--white-text);
+    color: var(--text);
     font-weight: 400;
   }
   .briefcase_container {
@@ -157,7 +163,9 @@
     width: 250px;
     height: 250px;
     border-radius: 25px;
-    box-shadow: -25px -25px 50px #232323, 25px 25px 50px #090909;
+    box-shadow:
+      -25px -25px 50px var(--box-shadow-button),
+      25px 25px 50px var(--box-shadow-top);
     transition: all 0.5s ease;
     display: flex;
     justify-content: center;
@@ -207,8 +215,9 @@
     align-items: center;
     border-radius: 50%;
     border: none;
-    background-color: #161616;
-    box-shadow: -1.5px -1.5px 3px rgba(35, 35, 35, 0.25),
+    background-color: var(--background);
+    box-shadow:
+      -1.5px -1.5px 3px rgba(35, 35, 35, 0.25),
       1.5px 1.5px 3px rgba(9, 9, 9, 0.25);
     position: absolute;
     font-weight: bold;
@@ -225,7 +234,9 @@
   }
   .arrow:hover {
     cursor: pointer;
-    box-shadow: 2px 2px 6px var(--red), -2px -2px 6px var(--rosa-light);
+    box-shadow:
+      2px 2px 6px var(--red),
+      -2px -2px 6px var(--rosa-light);
     transform: scale(1.1);
   }
   .left {
@@ -241,14 +252,18 @@
     width: 50px;
     margin: 1rem;
     border-radius: 10px;
-    background: #161616;
-    box-shadow: 3px 3px 6px #090909, -3px -3px 6px #232323;
+    background: var(--background);
+    box-shadow:
+      3px 3px 6px var(--box-shadow-top),
+      -3px -3px 6px var(--box-shadow-button);
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .box_skill:hover {
-    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    box-shadow:
+      5px 5px 10px var(--red),
+      -5px -5px 10px var(--rosa-light);
     transform: scale(1.1);
   }
 

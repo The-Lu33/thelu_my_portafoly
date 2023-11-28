@@ -26,8 +26,8 @@
   .card {
     width: 300px;
     height: 400px;
-    background: #161616;
-    box-shadow: -15px -15px 30px #232323, 15px 15px 30px #090909;
+    background:var(--background);
+    box-shadow: -15px -15px 30px var(--box-shadow-button), 15px 15px 30px var(--box-shadow-top);
     border-radius: 15px;
     padding: 20px;
     text-align: center;

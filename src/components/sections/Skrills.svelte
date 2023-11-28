@@ -1,35 +1,41 @@
 <script>
-  import Line from './Line.svelte';
-  import Skillbar from './Skillsbars.svelte';
+  import { language } from "../../store/lang";
+  import Line from "./Line.svelte";
+  import Skillbar from "./Skillsbars.svelte";
 
   const skillLevels = [
-    { skill: 'Frontend Developer', percent: 90, delTime: 10 },
-    { skill: 'application developer', percent: 80, delTime: 10 },
-    { skill: 'Backend Developer', percent: 65, delTime: 10 },
-    { skill: 'Desiguer UX/UI', percent: 80, delTime: 10 },
-    { skill: 'Web Desiguer', percent: 75, delTime: 10 }
+    { skill: "Frontend Developer", percent: 90, delTime: 10 },
+    { skill: "application developer", percent: 80, delTime: 10 },
+    { skill: "Backend Developer", percent: 65, delTime: 10 },
+    { skill: "Desiguer UX/UI", percent: 80, delTime: 10 },
+    { skill: "Web Desiguer", percent: 75, delTime: 10 },
   ];
+  const skillLevelsES = [
+    { skill: "Frontend Developer", percent: 90, delTime: 10 },
+    { skill: "application developer", percent: 80, delTime: 10 },
+    { skill: "Backend Developer", percent: 65, delTime: 10 },
+    { skill: "Desiguer UX/UI", percent: 80, delTime: 10 },
+    { skill: "Web Desiguer", percent: 75, delTime: 10 },
+  ];
+  let skills;
+  $: skills = $language === "en" ? skillLevels : skillLevelsES;
+  console.log(skills)
 </script>
 
-<section
-  class="container_sk"
-  id="section_skrills"
->
+<section class="container_sk" id="section_skrills">
   <div class="section_skrills">
     <div class="container_tittle">
-      <h2 class="tittle_skrills tittles">SKills</h2>
+      <h2 class="tittle_skrills tittles">
+        {$language === "en" ? "SKills" : "Habilidades"}
+      </h2>
       <span class="line">
         <Line />
       </span>
     </div>
 
     <div class="skills">
-      {#each skillLevels as { skill, percent, delTime }}
-        <Skillbar
-          {skill}
-          {percent}
-          {delTime}
-        />
+      {#each skills as { skill, percent, delTime }}
+        <Skillbar {skill} {percent} {delTime} />
       {/each}
     </div>
   </div>
@@ -51,7 +57,7 @@
 
   .tittles {
     font-size: 25px;
-    color: var(--white-text);
+    color: var(--text);
     font-weight: 400;
   }
 
@@ -66,8 +72,10 @@
     width: 350px;
     height: 450px;
     border-radius: 50px;
-    background: #161616;
-    box-shadow: 30px 30px 60px #090909, -30px -30px 60px #232323;
+    background: var(--background);
+    box-shadow:
+      30px 30px 60px var(--box-shadow-top),
+      -30px -30px 60px var(--box-shadow-button);
     margin: 0 auto;
     margin-top: 5rem;
     padding: 5px 0;
@@ -92,8 +100,10 @@
       width: 450px;
       height: 450px;
       border-radius: 50px;
-      background: #161616;
-      box-shadow: 30px 30px 60px #090909, -30px -30px 60px #232323;
+      background: var(--background);
+      box-shadow:
+        30px 30px 60px var(--box-shadow-top),
+        -30px -30px 60px var(--box-shadow-button);
       display: flex;
       flex-direction: column;
       align-items: center;

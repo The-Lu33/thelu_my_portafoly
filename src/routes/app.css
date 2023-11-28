@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #161616;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -16,3 +16,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #331f36;
 }
+

@@ -1,24 +1,23 @@
 <script>
-  import { Motion } from 'svelte-motion';
-  import Line from './Line.svelte';
+  import { Motion } from "svelte-motion";
+  import Line from "./Line.svelte";
+  import { language } from "../../store/lang.js";
 </script>
 
-<section
-  class="section_about"
-  id="section_about"
->
+<section class="section_about" id="section_about">
   <div class="container_tittle">
-    <h2 class="tittle_about tittles">About Me</h2>
+    <h2 class="tittle_about tittles">
+      {$language === "en" ? "About" : "Sobre Mi"}
+    </h2>
     <span class="line">
       <Line />
     </span>
   </div>
   <div class="container_p">
     <p class="paragraph_about">
-      I am a full stack developer, a retailer committed to work in search of new
-      learning, working to obtain the best experience for development, a team or
-      solo worker, sociable and also prepared to lead if necessary. himself a
-      committed programmer and prepared to give the best of himself every day.
+      {$language === "en"
+        ? `I am a committed and passionate Full Stack developer, always willing to give my best in each project. My goal is to develop high-quality software that improves people's lives and makes the world a better place. I hope to have the opportunity to work with you!`
+        : `soy un Desarrollador Full Stack comprometido y apasionado, siempre dispuesto a dar lo mejor de mí en cada proyecto. Mi objetivo es desarrollar software de alta calidad que mejore la vida de las personas y haga del mundo un lugar mejor. ¡Espero tener la oportunidad de trabajar contigo!`}
     </p>
   </div>
 </section>
@@ -39,7 +38,7 @@
   }
   .tittles {
     font-size: 25px;
-    color: var(--white-text);
+    color: var(--text);
     font-weight: 400;
   }
   .section_about {
@@ -59,7 +58,7 @@
     margin-bottom: 30px;
   }
   .paragraph_about {
-    color: var(--white-p);
+    color: var(--text-p);
     font-weight: 400;
     font-size: 1rem;
     text-align: center;
@@ -69,8 +68,10 @@
     width: 350px;
     height: 250px;
     border-radius: 30px;
-    background: #161616;
-    box-shadow: 15px 15px 30px #090909, -15px -15px 30px #232323;
+    background: var(--background);
+    box-shadow:
+      15px 15px 30px var(--box-shadow-top),
+      -15px -15px 30px var(--box-shadow-button);
     display: flex;
     justify-items: center;
     align-items: center;
@@ -78,7 +79,6 @@
   .container_tittle {
     z-index: 10;
     margin-bottom: 2rem;
-
   }
   @media screen and (min-width: 744px) {
     .section_about {

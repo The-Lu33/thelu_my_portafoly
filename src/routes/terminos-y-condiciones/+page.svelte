@@ -45,13 +45,13 @@
   }
   h1 {
     font-size: 2rem;
-    color: var(--white-text);
+    color: var(--text);
   }
   pre {
     padding: 0 1rem;
     max-width: 80%;
     white-space: pre-line;
-    color: var(--white-text);
+    color: var(--text);
     font-size: 1.5rem;
   }
 </style>

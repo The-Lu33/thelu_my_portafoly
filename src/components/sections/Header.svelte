@@ -1,66 +1,36 @@
 <script>
-  import Line from './Line.svelte';
+  import { language } from "../../store/lang";
+  import Line from "./Line.svelte";
 </script>
 
-<section
-  class="principal_header"
-  id="principal_header"
->
+<section class="principal_header" id="principal_header">
   <div class="image_container">
-    <img
-      alt="imagens"
-      src="./image/0.jpg"
-      class="image_logo_the_lu"
-    />
-    <img
-      alt="imagens"
-      src="./image/iam.png"
-      class="iam"
-    />
+    <img alt="imagens" src="./image/0.jpg" class="image_logo_the_lu" />
+    <img alt="imagens" src="./image/iam.png" class="iam" />
   </div>
   <article class="presentation_container">
-    <h3 class="tittle_secundary">I AM</h3>
+    <h3 class="tittle_secundary">{$language === "es" ? "Soy" : "I AM"}</h3>
 
-    <h2
-      class="tittle_firts"
-      translate="no"
-    >
-      THE Lú
-    </h2>
+    <h2 class="tittle_firts" translate="no">Luisangel</h2>
     <!-- <hr class="line_firts" /> -->
-    <span
-      class="line"
-         >
+    <span class="line">
       <Line />
     </span>
-    <p
-      class="paragraph_firt"
-      translate="no"
-    >
-      Full Stack Developer Designer ux/ui
-    </p>
+    <span>
+      <p class="paragraph_firt stack" translate="no">Full Stack Developer</p>
+      <p class="paragraph_firt design" translate="no">Designer ux/ui</p>
+    </span>
     <div class="buttons_sociales">
       <button class="button_social button_linkedin">
         <!-- svelte-ignore security-anchor-rel-noreferrer -->
-        <a
-          href="https://www.linkedin.com/in/luisangel-tapia/"
-          target="_blank"
-          ><img
-            alt="imagens"
-            src="./image/linkedin.svg"
-          /></a
+        <a href="https://www.linkedin.com/in/luisangel-tapia/" target="_blank"
+          ><img alt="imagens" src="./image/linkedin.svg" /></a
         >
       </button>
       <button class="button_social button_github">
         <!-- svelte-ignore security-anchor-rel-noreferrer -->
-        <a
-          href="https://github.com/The-Lu33"
-          target="_blank"
-        >
-          <img
-            alt="imagens"
-            src="./image/github.svg"
-          />
+        <a href="https://github.com/The-Lu33" target="_blank">
+          <img alt="imagens" src="./image/github.svg" />
         </a>
       </button>
     </div>
@@ -95,17 +65,21 @@
   .image_logo_the_lu {
     grid-row-start: 1;
     grid-column-start: 2;
-    box-shadow: inset 20px 20px 50px #090909, inset -20px -20px 50px #232323;
+    box-shadow:
+      inset 20px 20px 50px var(--box-shadow-top),
+      inset -20px -20px 50px var(--box-shadow-button);
   }
   .iam {
     grid-column-start: 1;
     grid-row: 2;
 
-    box-shadow: 20px -20px 40px #090909, -1px 1px 50px #232323;
+    box-shadow:
+      20px -20px 40px var(--box-shadow-top),
+      -1px 1px 50px var(--box-shadow-button);
   }
   .presentation_container {
     text-align: center;
-    color: var(--white-text);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,7 +92,8 @@
   .tittle_firts {
     font-size: 50px;
     font-weight: 400;
-    text-shadow: -15px -15px 30px rgba(102, 102, 102, 0.2),
+    text-shadow:
+      -15px -15px 30px rgba(102, 102, 102, 0.2),
       15px 15px 30px rgba(255, 255, 255, 0.1);
   }
   .line {
@@ -131,6 +106,9 @@
     padding: 0 60px;
     margin-bottom: 2rem;
   }
+  .stack{
+    margin-bottom: 0;
+  }
   .buttons_sociales {
     width: 360px;
     /* padding: 0 50px; */
@@ -142,14 +120,18 @@
   .button_social {
     width: 60px;
     height: 60px;
-    background: #161616;
+    background: var(--background);
     border: none;
     border-radius: 50%;
-    box-shadow: 5px 5px 10px #090909, -5px -5px 10px #232323;
+    box-shadow:
+      5px 5px 10px var(--box-shadow-top),
+      -5px -5px 10px var(--box-shadow-button);
     cursor: pointer;
   }
   .button_social:hover {
-    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    box-shadow:
+      5px 5px 10px var(--red),
+      -5px -5px 10px var(--rosa-light);
   }
   .buttons_sociales img {
     width: 80%;

@@ -1,95 +1,119 @@
 <script>
-  let active = false;
-  let btnNabvar = () => {
-    active = !active;
-  };
+  import { onMount } from "svelte";
+  import { theme } from "./../../store/theme.js";
+  import { language } from "../../store/lang.js";
+
   let y;
+
 </script>
 
 <svelte:window bind:scrollY={y} />
 
-<nav
-  class="nav"
-  class:show_nav={y >= 60}
-  class:active_menu_responsive_nav={active}
->
-  <h2
-    class="tittle_nabvar"
-    translate="no"
-  >
-    The Lú
-  </h2>
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- <div
-    on:click={btnNabvar}
-    class="btn__Nabvar"
-  >
-    <span
-      class="line1"
-      class:active_line1={active}
-    />
-    <span
-      class="line2"
-      class:active_line2={active}
-    />
-    <span
-      class="line3"
-      class:active_line3={active}
-    />
+<nav class="nav" class:show_nav={y >= 60}>
+  <h2 class="tittle_nabvar" translate="no">The Lú</h2>
+  <div class="contain">
+    <button
+      class="switch"
+      on:click={() =>
+        theme.update((value) => (value === "dark" ? "light" : "dark"))}
+    >
+      {#if $theme === "dark"}
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          height="2em"
+          role="presentation"
+          viewBox="0 0 24 24"
+          width="2em"
+          color="white"
+        >
+          <g fill="currentColor">
+            <path d="M19 12a7 7 0 11-7-7 7 7 0 017 7z" />
+            <path
+              d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z"
+            />
+          </g>
+        </svg>
+      {:else}
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          height="2em"
+          role="presentation"
+          viewBox="0 0 24 24"
+          width="2em"
+          color="#000"
+        >
+          <path
+            d="M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z"
+            fill="currentColor"
+          />
+        </svg>
+      {/if}
+    </button>
+    <button
+      class="switch lang"
+      on:click={() => {
+        
+        language.update((value) => (value === "en" ? "es" : "en"));
+      }}
+    >
+      {#if $language === "es"}
+        <h2>EN</h2>
+      {:else}
+        <h2>ES</h2>
+      {/if}
+    </button>
   </div>
-  <div
-    class="menu_responsive"
-    class:active_menu_responsive={active}
-  >
-    <ul>
-      <li>
-        <a href="#principal_header">home</a>
-        <hr class="line" />
-      </li>
-      <li>
-        <a href="#section_about">About Me</a>
-        <hr class="line" />
-      </li>
-      <li>
-        <a href="#section_skrills">Skills</a>
-        <hr class="line" />
-      </li>
-      <li>
-        <a href="#techonologies_container">Tecnologies</a>
-        <hr class="line" />
-      </li>
-      <li>
-        <a href="#briefcase_container">Brifcase</a>
-        <hr class="line" />
-      </li>
-      <li>
-        <a href="#contact">Contact</a>
-        <hr class="line" />
-      </li>
-    </ul>
-  </div> -->
 </nav>
 
 <style>
-   .nav {
+  .nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
+    align-items: start;
+    padding: 0.5rem 1.2rem;
     font-size: 1.5rem;
     transition: all 0.5s ease;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     top: 0;
     width: 100%;
     z-index: 100;
-
-    /* background-color: #7c1773; */
   }
   h2 {
-    color: var(--white-text);
+    color: var(--text);
     font-size: 1.5rem;
     font-weight: 400;
     margin-left: 1rem;
+  }
+  .switch {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    background: var(--background);
+    box-shadow:
+      2px 2px 4px var(--box-shadow-top),
+      -2px -2px 4px var(--box-shadow-button);
+  }
+  .lang {
+    width: auto;
+    text-align: center;
+    /* padding: 0.5rem; */
+  }
+  .lang > h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .contain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 </style>

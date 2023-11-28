@@ -1,10 +1,13 @@
 <script>
+  import { language } from "../../store/lang";
   import Line from "./Line.svelte";
 </script>
 
 <section class="contact_container" id="contact">
   <div class="container_tittle">
-    <h2 class="tittle_contact tittles">Contact</h2>
+    <h2 class="tittle_contact tittles">
+      {$language === "en" ? "Contact" : "Contacto"}
+    </h2>
     <span class="line">
       <Line />
     </span>
@@ -22,7 +25,15 @@
     </a>
   </div>
   <div class="cv_download_container">
-    <a href="./luisangelcv.pdf" download="" class="dowload_cv">
+    <a
+      href={`./${
+        $language === "es"
+          ? "luisangel-tapia-cv-es.pdf"
+          : "luisangel-tapia-cv-en.pdf"
+      }`}
+      download=""
+      class="dowload_cv"
+    >
       <h2 class="text_cv">cv download</h2>
       <div>
         <img src="./image/bxs-cloud-download.svg" alt="dowmload_cv" />
@@ -46,7 +57,7 @@
   }
   .tittles {
     font-size: 25px;
-    color: var(--white-text);
+    color: var(--text);
     font-weight: 400;
   }
   .contact_container {
@@ -61,8 +72,10 @@
   .cv_download_container {
     width: 150px;
     height: 150px;
-    background: #161616;
-    box-shadow: -15px -15px 30px #232323, 15px 15px 30px #090909;
+    background: var(--background);
+    box-shadow:
+      -15px -15px 30px var(--box-shadow-button),
+      15px 15px 30px var(--box-shadow-top);
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -74,7 +87,9 @@
   .contact_image_container:hover,
   .cv_download_container:hover {
     border-radius: 20px;
-    box-shadow: 5px 5px 10px var(--red), -5px -5px 10px var(--rosa-light);
+    box-shadow:
+      5px 5px 10px var(--red),
+      -5px -5px 10px var(--rosa-light);
     transform: scale(1.1);
     cursor: pointer;
   }
@@ -91,7 +106,7 @@
     align-items: center;
   }
   .text_cv {
-    color: var(--white-text);
+    color: var(--text);
     font-size: 1rem;
     text-decoration: none;
   }
@@ -104,7 +119,7 @@
       font-size: 50px;
     }
     .text_cv {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .contact_container {
       flex-direction: row;
@@ -114,16 +129,13 @@
     }
     .contact_image_container,
     .cv_download_container {
-      width: 250px;
-      height: 250px;
+      width: 180px;
+      height: 180px;
     }
     .contact_image_container img,
     .cv_download_container img {
-      width: 180px;
-      height: 120px;
-    }
-    .contact_image_container {
-      display: none;
+      width: 150px;
+      height: 100px;
     }
   }
 </style>

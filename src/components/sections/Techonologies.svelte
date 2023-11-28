@@ -1,4 +1,5 @@
 <script>
+	import { language } from './../../store/lang.js';
   import { Motion } from "svelte-motion";
   import IntersectionObserver from "svelte-intersection-observer";
   import Line from "./Line.svelte";
@@ -140,7 +141,7 @@
 </div>
 <section class="techonologies_container" id="techonologies_container">
   <div class="container_tittle">
-    <h2 class="tittle_techonologies tittles">Technologies</h2>
+    <h2 class="tittle_techonologies tittles">{$language === 'en'?'Technologies':'Tecnologías'}</h2>
     <span class="line">
       <Line />
     </span>
@@ -181,7 +182,7 @@
   }
   .tittles {
     font-size: 25px;
-    color: var(--white-text);
+    color: var(--text);
     font-weight: 400;
   }
   .techonologies_container {
@@ -204,8 +205,8 @@
     width: 70px;
     margin: 1rem;
     border-radius: 10px;
-    background: #161616;
-    box-shadow: 7px 7px 14px #090909, -7px -7px 14px #232323;
+    background: var(--background);
+    box-shadow: 7px 7px 14px var(--box-shadow-top), -7px -7px 14px var(--box-shadow-button);
     display: flex;
     align-items: center;
     justify-content: center;
