@@ -6,7 +6,7 @@
     {
       id: 0,
       img: "./image/yourshops-courier.png",
-      link: "https://www.behance.net/gallery/156432395/YourShpos",
+      link: "https://yourshops-courier.com/",
       description: `${
         $language === "en"
           ? "I design logo and also manage a retail sales network or importer of fashion items such as clothing for women, men and children, watches, lingerie etc."
