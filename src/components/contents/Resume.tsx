@@ -68,7 +68,7 @@ export default function Resume() {
     };
   }, []);
   return (
-    <article className="mb-4 sm:mb-[20px] sm:w-[520px] md:w-[700px] lg:w-[950px] m-auto  bg-[#1e1e1f] rounded-[20px] border border-[#383838] p-[15px] shadow-[-4px_8px_24px_#00000040] z-10 ease-in-out duration-1000">
+    <article className="mb-4 sm:mb-[20px] sm:w-[520px] md:w-[700px] lg:w-[950px] m-auto  bg-[#1e1e1f] rounded-[20px] border border-[#383838] p-[15px] shadow-[-4px_8px_24px_#00000040] z-10 ease-in-out duration-1000  xl:w-auto">
       <header className="mb-[30px]">
         <h2 className="text-2xl relative  text-[#fafafa] font-bold ">Resume</h2>
         <div className="w-[30px] h-[2px] bg-custom-radial "></div>

@@ -4,19 +4,19 @@ export default function Aside() {
   const [sidebarActive, setSidebarActive] = useState(false);
   return (
     <aside
-      className={`mb-4 overflow-hidden  rounded-[20px] bg-[#1e1e1f] border border-[#383838] p-4 box-shadow-[-4px_8px_24px] sm:w-[520px] sm:me-auto sm:p-7 sm:mx-auto sm:mb-7 md:w-[700px] lg:w-[950px] shadow-[#00000040] xl:shadow-[0_24px_80px] xl:w-auto xl:position-sticky xl:top-16 xl:max-h-max xl:h-full xl:mb-0 xl:pt-16 z-1 ${
+      className={`mb-4 rounded-[20px] bg-[#1e1e1f] border border-[#383838] p-4 box-shadow-[-4px_8px_24px] sm:w-[520px] sm:me-auto sm:p-7 sm:mx-auto sm:mb-7 md:w-[700px] lg:w-[950px] shadow-[#00000040] xl:shadow-[0_24px_80px] 
+        xl:w-[350px] xl:sticky xl:top-16 xl:self-start xl:h-[calc(100vh-14rem)] xl:overflow-y-auto xl:mb-0 xl:pt-16 z-10 ${
         sidebarActive
-          ? "h-[455px]  sm:max-h-[584px] ease-in-out duration-1000"
+          ? "h-[455px] sm:h-[584px] ease-in-out duration-1000"
           : "h-[112px] sm:h-[180px] ease-in-out duration-1000"
       }`}
-
     >
       <div className="relative flex justify-start items-center gap-4 sm:gap-[25px] xl:flex-col">
         <figure className="rounded-[20px] bg-gradient-to-br from-[hsl(240,1%,25%)] from-3% to-[hsl(0,0%,19%)] to-97% sm:rounded-[30px] overflow-auto ">
           <img
             src="/src/assets/avatar.png"
             className="sm:w-[120px] xl:w-[150px]"
-            alt="Richard hanrick"
+            alt="avatar"
             width="80"
           />
         </figure>
@@ -37,7 +37,7 @@ export default function Aside() {
         <button
           className={`absolute top-[-16px] right-[-16px] rounded-bl-[15px] p-[10px] 
           text-white shadow-[0_16px_30px_rgba(0,0,0,0.25)] transition-all 
-          ease-in-out duration-[1500ms] z-20 sm:top-[-30px] sm:right-[-30px]
+          ease-in-out duration-[1500ms] z-20 sm:top-[-30px] sm:right-[-30px] xl:hidden
           ${
             sidebarActive
               ? "bg-[radial-gradient(100%_300%_at_0%_-50%,#db0414_10%,#c60842_50%,#7c1773_90%)]"
@@ -70,7 +70,7 @@ export default function Aside() {
       >
         <div className="w-full h-[2px] bg-custom-radial  my-4 sm:my-8 "></div>
 
-        <ul className="grid grid-cols-1 gap-4 sm:gap-[20px] md:grid-cols-2 md:gap-[30px_15px] xl:grid-cols-1  ">
+        <ul className="grid grid-cols-1 gap-4 sm:gap-[20px] md:grid-cols-2 md:gap-[30px_15px] xl:grid-cols-1  xl:mb-6">
           <li className="min-w-full flex items-center gap-4">
             <div className="relative bg-box-linear w-[30px] h-[30px] rounded-lg flex justify-center items-center text-[16px] z-10 shadow-[-4px_8px_24px_rgba(0,0,0,0.25)] ">
               <svg
@@ -238,7 +238,7 @@ export default function Aside() {
 
         <div className="w-full h-[2px] bg-custom-radial  my-4 sm:my-8 xl:hidden xl:opacity-0"></div>
 
-        <ul className="flex justify-start items-center gap-4 pb-1 pl-2">
+        <ul className="flex justify-start items-center gap-4 pb-1 pl-2 xl:justify-center">
           <li className="social-item">
             <a href="#" className="social-link">
               <svg

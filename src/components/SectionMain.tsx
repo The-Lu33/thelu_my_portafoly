@@ -7,7 +7,7 @@ export default function SectionMain() {
   const [activePage, setActivePage] = useState("about");
     const pages =[ <About/>, <Resumen/>]
     return (
-        <section className="pb-16 lg:relative lg:w-max lg:m-auto xl:min-w-[75%] xl:m-0 xl:w-[75%]">
+        <section className="pb-16 lg:relative lg:w-max lg:m-auto xl:min-w-[75%] xl:m-0 xl:w-[75%] overflow-hidden">
             <Nav activePage={activePage} setActivePage={setActivePage} />
 
             {pages.find(page => {
