@@ -4,12 +4,15 @@ export default function Aside() {
   const [sidebarActive, setSidebarActive] = useState(false);
   return (
     <aside
-      className={`mb-4 overflow-hidden transition-all ease-in-out rounded-[20px] bg-[#1e1e1f] border border-[#383838] p-4 box-shadow-[-4px_8px_24px] sm:w-[520px] sm:me-auto sm:p-7 sm:max-h-[180px] sm:mb-7 md:w-[700px] lg:w-[950px] shadow-[#00000040] xl:shadow-[0_24px_80px] xl:w-auto xl:position-sticky xl:top-16 xl:max-h-max xl:h-full xl:mb-0 xl:pt-16 z-10 ${
-        sidebarActive ? "max-h-[455px]" : "max-h-[112px]"
+      className={`mb-4 overflow-hidden  rounded-[20px] bg-[#1e1e1f] border border-[#383838] p-4 box-shadow-[-4px_8px_24px] sm:w-[520px] sm:me-auto sm:p-7 sm:mx-auto sm:mb-7 md:w-[700px] lg:w-[950px] shadow-[#00000040] xl:shadow-[0_24px_80px] xl:w-auto xl:position-sticky xl:top-16 xl:max-h-max xl:h-full xl:mb-0 xl:pt-16 z-1 ${
+        sidebarActive
+          ? "h-[455px]  sm:max-h-[584px] ease-in-out duration-1000"
+          : "h-[112px] sm:h-[180px] ease-in-out duration-1000"
       }`}
+
     >
       <div className="relative flex justify-start items-center gap-4 sm:gap-[25px] xl:flex-col">
-        <figure className="rounded-[20px] bg-gradient-to-br from-[hsl(240,1%,25%)] from-3% to-[hsl(0,0%,19%)] to-97% sm:rounded-[30px] ">
+        <figure className="rounded-[20px] bg-gradient-to-br from-[hsl(240,1%,25%)] from-3% to-[hsl(0,0%,19%)] to-97% sm:rounded-[30px] overflow-auto ">
           <img
             src="/src/assets/avatar.png"
             className="sm:w-[120px] xl:w-[150px]"
@@ -18,7 +21,7 @@ export default function Aside() {
           />
         </figure>
 
-        <div className="flex flex-col  sm:justify-center items-start sm:items-center">
+        <div className="flex flex-col  sm:justify-center items-start md:items-center">
           <h1
             className="text-[#fafafa] font-bold text-xl tracking-tight mb-[10px]"
             title="Luisangel Tapia"
@@ -34,7 +37,7 @@ export default function Aside() {
         <button
           className={`absolute top-[-16px] right-[-16px] rounded-bl-[15px] p-[10px] 
           text-white shadow-[0_16px_30px_rgba(0,0,0,0.25)] transition-all 
-          ease-in-out duration-[1500ms] z-20 
+          ease-in-out duration-[1500ms] z-20 sm:top-[-30px] sm:right-[-30px]
           ${
             sidebarActive
               ? "bg-[radial-gradient(100%_300%_at_0%_-50%,#db0414_10%,#c60842_50%,#7c1773_90%)]"
@@ -42,7 +45,7 @@ export default function Aside() {
           }`}
           onClick={() => setSidebarActive(!sidebarActive)}
         >
-          {/* <span>Show Contacts</span> */}
+          <span className="hidden sm:flex">Show Contacts</span>
 
           {/* <ion-icon name="chevron-down"></ion-icon> */}
           <svg
@@ -50,6 +53,7 @@ export default function Aside() {
             height="16"
             viewBox="0 0 24 24"
             fill="#fff"
+            className="sm:hidden"
             // style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
           >
             <path d="M16.939 7.939 12 12.879l-4.939-4.94-2.122 2.122L12 17.121l7.061-7.06z"></path>
@@ -58,8 +62,10 @@ export default function Aside() {
       </div>
 
       <div
-        className={`duration-500 ease-in-out xl:opacity-100 xl:visible ${
-          sidebarActive ? "opacity-100 visible" : "opacity-0 hidden"
+        className={` xl:opacity-100 xl:visible ${
+          sidebarActive
+            ? "opacity-100 transition-opacity visible duration-1000 ease-in-out"
+            : "transition-opacity  duration-1000 ease-in-out opacity-0"
         }`}
       >
         <div className="w-full h-[2px] bg-custom-radial  my-4 sm:my-8 "></div>
