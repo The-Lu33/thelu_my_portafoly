@@ -1,0 +1,34 @@
+---
+import Aside from "@/components/Aside";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio - The Lú</title> 
+  </head>
+  <body class="bg-[#121212]">
+    <main
+      class="min-w-[259px] m-[15px_12px] mb-[75px] sm:mt-[60px] sm:mb-[100px] lg:mb-[60px] xl:max-w-[1400px] xl:mx-auto xl:grid xl:grid-cols-[350px_1fr] xl:gap-8 xl:items-start"
+    >
+      <Aside client:load  />
+	  
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+	font-family:'Poppins', sans-serif;
+  }
+ 
+</style>
