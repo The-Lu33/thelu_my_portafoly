@@ -7,7 +7,7 @@ export default function Aside() {
       className={`mb-4 rounded-[20px] bg-[#1e1e1f] border border-[#383838] p-4 box-shadow-[-4px_8px_24px] sm:w-[520px] sm:me-auto sm:p-7 sm:mx-auto sm:mb-7 md:w-[700px] lg:w-[950px] shadow-[#00000040] xl:shadow-[0_24px_80px] 
         xl:w-[350px] xl:sticky xl:top-16 xl:self-start xl:h-[calc(100vh-14rem)] xl:overflow-y-auto xl:mb-0 xl:pt-16 z-10 ${
         sidebarActive
-          ? "h-[455px] sm:h-[584px] ease-in-out duration-1000"
+          ? "h-[400px] sm:h-[500px] ease-in-out duration-1000"
           : "h-[112px] sm:h-[180px] ease-in-out duration-1000"
       }`}
     >
@@ -35,9 +35,9 @@ export default function Aside() {
         </div>
 
         <button
-          className={`absolute top-[-16px] right-[-16px] rounded-bl-[15px] p-[10px] 
+          className={`absolute top-[-16px] right-[-16px] rounded-bl-[15px] rounded-tr-[20px] p-[10px] 
           text-white shadow-[0_16px_30px_rgba(0,0,0,0.25)] transition-all 
-          ease-in-out duration-[1500ms] z-20 sm:top-[-30px] sm:right-[-30px] xl:hidden
+          ease-in-out duration-[1500ms] z-20 sm:top-[-28px] sm:right-[-28px] xl:hidden
           ${
             sidebarActive
               ? "bg-[radial-gradient(100%_300%_at_0%_-50%,#db0414_10%,#c60842_50%,#7c1773_90%)]"
@@ -152,45 +152,7 @@ export default function Aside() {
             </div>
           </li>
 
-          <li className="min-w-full flex items-center gap-4">
-            <div className="relative bg-box-linear w-[30px] h-[30px] rounded-lg flex justify-center items-center text-[16px] z-10 shadow-[-4px_8px_24px_rgba(0,0,0,0.25)]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <defs>
-                  <radialGradient
-                    id="customRadial"
-                    cx="50%"
-                    cy="50%"
-                    r="50%"
-                    fx="50%"
-                    fy="50%"
-                  >
-                    <stop offset="10%" stopColor="#db0414" stopOpacity="1" />
-                    <stop offset="50%" stopColor="#c60842" stopOpacity="1" />
-                    <stop offset="90%" stopColor="#7c1773" stopOpacity="1" />
-                  </radialGradient>
-                </defs>
-                <path
-                  fill="url(#customRadial)"
-                  d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"
-                />
-              </svg>
-            </div>
-
-            <div className="max-w-[calc(100%-46px)]">
-              <p className="text-[#d6d6d6b3] font-semibold text-sm ">
-                Birthday
-              </p>
-
-              {/* <time datetime="1982-06-23">June 23, 1982</time> */}
-              <span className="text-[#fafafa] text-base">March 30, 2003</span>
-            </div>
-          </li>
-
+       
           <li className="min-w-full flex items-center gap-4">
             <div className="relative bg-box-linear w-[30px] h-[30px] rounded-lg flex justify-center items-center text-[16px] z-10 shadow-[-4px_8px_24px_rgba(0,0,0,0.25)]">
               <svg
@@ -230,7 +192,7 @@ export default function Aside() {
               </p>
 
               <address className="text-[#fafafa] text-base">
-                Sacramento, California, USA
+                Venezuela
               </address>
             </div>
           </li>
@@ -238,7 +200,7 @@ export default function Aside() {
 
         <div className="w-full h-[2px] bg-custom-radial  my-4 sm:my-8 xl:hidden xl:opacity-0"></div>
 
-        <ul className="flex justify-start items-center gap-4 pb-1 pl-2 xl:justify-center">
+        <ul className="flex justify-start items-center gap-4 pb-1 pl-2 xl:justify-center xl:mt-32">
           <li className="social-item">
             <a href="#" className="social-link">
               <svg
